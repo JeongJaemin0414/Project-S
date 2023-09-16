@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc1dcb27cbde307459946b84b3a99c3f, type: 3}
+  m_Name: DialogTable
+  m_EditorClassIdentifier: 
+  dialog:
+  - index: 101001
+    group: 101
+    charIndex: 0
+    dec: 10101
+    illustLocation: 0
+    illustAppear: 0
+  - index: 101002
+    group: 101
+    charIndex: 0
+    dec: 10102
+    illustLocation: 0
+    illustAppear: 2
+  - index: 101003
+    group: 101
+    charIndex: 1
+    dec: 10103
+    illustLocation: 1
+    illustAppear: 0
+  - index: 101004
+    group: 101
+    charIndex: 1
+    dec: 10104
+    illustLocation: 1
+    illustAppear: 2
+  - index: 101005
+    group: 101
+    charIndex: 0
+    dec: 10105
+    illustLocation: 0
+    illustAppear: 2
+  - index: 101006
+    group: 101
+    charIndex: 0
+    dec: 10106
+    illustLocation: 0
+    illustAppear: 1
+  - index: 101007
+    group: 101
+    charIndex: 1
+    dec: 10107
+    illustLocation: 1
+    illustAppear: 2
+  - index: 101008
+    group: 101
+    charIndex: 1
+    dec: 10108
+    illustLocation: 1
+    illustAppear: 1

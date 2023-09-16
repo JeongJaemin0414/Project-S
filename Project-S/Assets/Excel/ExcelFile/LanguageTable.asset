@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eee35fc96582a17408bff7cb2eb98b6b, type: 3}
+  m_Name: LanguageTable
+  m_EditorClassIdentifier: 
+  language:
+  - index: 10101
+    korLanguage: "\uC548\uB155\uD558\uC138\uC694!"
+    engLanguage: hello!
+  - index: 10102
+    korLanguage: "\uC800\uB294 \uC544\uB85C\uC5D0\uC694!"
+    engLanguage: I'm Aro!
+  - index: 10103
+    korLanguage: "\uC548\uB155\uD558\uC138\uC694!"
+    engLanguage: hello!
+  - index: 10104
+    korLanguage: "\uC800\uB294 \uCE74\uC57C\uC5D0\uC694!"
+    engLanguage: I'm Kaya!
+  - index: 10105
+    korLanguage: "\uBC18\uAC00\uC6CC\uC694"
+    engLanguage: nice to meet you
+  - index: 10106
+    korLanguage: "\uC800\uB294 \uB18D\uBD80\uC5D0\uC694"
+    engLanguage: I am a farmer
+  - index: 10107
+    korLanguage: "\uC800\uB3C4 \uBC18\uAC00\uC6CC\uC694"
+    engLanguage: Nice to meet you, too
+  - index: 10108
+    korLanguage: "\uC800\uB294 \uAC00\uC218\uC5D0\uC694"
+    engLanguage: I am a singer
+  - index: 12010000
+    korLanguage: "\uC544\uB85C"
+    engLanguage: Aloe
+  - index: 12020000
+    korLanguage: "\uCE74\uC57C"
+    engLanguage: Kaya

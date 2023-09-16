@@ -3,6 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [ExcelAsset]
-public abstract class ExcelBase : ScriptableObject
+public class ExcelBase : ScriptableObject
 {
 }
