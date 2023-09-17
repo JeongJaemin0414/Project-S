@@ -95,7 +95,7 @@ namespace StarterAssets
 
 		public void AttackInput()
         {
-			player.OnAttack();
+
         }
 
 #if !UNITY_IOS || !UNITY_ANDROID

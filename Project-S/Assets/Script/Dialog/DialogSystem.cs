@@ -41,6 +41,12 @@ public class DialogSystem : MonoBehaviour
     public List<DialogData> dialogData;
 
     private int currentDialogIndex = 0;
+    private bool isTypingEffect = false;
+    private float typingSpeed = 0.1f;
+
+    [Header("이미지 연출 값 수치")]
+    public float ImageMoveValue = 100f;
+    public float ImageMoveDuration = 1f;
 
     private void Update()
     {
@@ -77,44 +83,88 @@ public class DialogSystem : MonoBehaviour
         }
         else
         {
-            if (dialogData.Count > currentDialogIndex) //대사가 남아있을 경우
+            if (isTypingEffect)
             {
-                CharacterData _characterData = CharacterManager.Instance.GetCharacterData(dialogData[currentDialogIndex].charIndex);
-                int _illustIndex = (int)dialogData[currentDialogIndex].illustLocation;
-                string _characterName = _characterData.Name;
-                string _characterDialog = LanguageManager.Instance.GetString(dialogData[currentDialogIndex].dec);
-                Sprite _characterImage = Resources.Load<Sprite>("Char/" + _characterData.illustFileName);
+                isTypingEffect = false;
 
-                dialogUI.images[_illustIndex].sprite = _characterImage;
-                dialogUI.textName.text = _characterName;
-                dialogUI.textDialogue.text = _characterDialog;
+                string _dialog = LanguageManager.Instance.GetString(dialogData[currentDialogIndex].dec);
 
-                switch (dialogData[currentDialogIndex].illustAppear)
-                {
-                    case IllustAppear.FadeIn:
-                        DOTweenManager.Instance.FadeIn(dialogUI.images[_illustIndex]);
-                        break;
-                    case IllustAppear.FadeOut:
-                        DOTweenManager.Instance.FadeOut(dialogUI.images[_illustIndex]);
-                        break;
-                }
+                StopCoroutine("OnTypingText");
+                dialogUI.textDialogue.text = _dialog;
+                dialogUI.objectArrow.gameObject.SetActive(true);
 
                 currentDialogIndex++;
+                return;
             }
             else
             {
-                currentDialogIndex = 0;
-                dialogData.Clear();
+                if (dialogData.Count > currentDialogIndex) //대사가 남아있을 경우
+                {
+                    CharacterData _characterData = CharacterManager.Instance.GetCharacterData(dialogData[currentDialogIndex].charIndex);
+                    int _illustIndex = (int)dialogData[currentDialogIndex].illustLocation;
+                    string _characterName = _characterData.Name;
+                    Sprite _characterImage = Resources.Load<Sprite>("Char/" + _characterData.illustFileName);
+                    float _imageMoveValue;
 
-                CloseDialogPanel();
+                    dialogUI.images[_illustIndex].sprite = _characterImage;
+                    dialogUI.textName.text = _characterName;
+                    dialogUI.objectArrow.gameObject.SetActive(false);
+                    StartCoroutine("OnTypingText");
+                    //dialogUI.textDialogue.text = _dialog;
+
+                    switch (dialogData[currentDialogIndex].illustAppear)
+                    {
+                        case IllustAppear.FadeIn:
+                            _imageMoveValue = (dialogData[currentDialogIndex].illustLocation == IllustLocation.Left) ? ImageMoveValue : -ImageMoveValue;
+
+                            DOTweenManager.Instance.FadeIn(dialogUI.images[_illustIndex]);
+                            DOTweenManager.Instance.MoveRectTransformX(dialogUI.images[_illustIndex].rectTransform, _imageMoveValue, 1f);
+                            break;
+                        case IllustAppear.FadeOut:
+                            _imageMoveValue = (dialogData[currentDialogIndex].illustLocation == IllustLocation.Left) ? -ImageMoveValue : ImageMoveValue;
+
+                            DOTweenManager.Instance.FadeOut(dialogUI.images[_illustIndex]);            
+                            DOTweenManager.Instance.MoveRectTransformX(dialogUI.images[_illustIndex].rectTransform, _imageMoveValue, 1f);
+                            break;
+                    }
+                }
+                else
+                {
+                    currentDialogIndex = 0;
+                    dialogData.Clear();
+
+                    CloseDialogPanel();
+                }
             }
         }
     }
+
+    private IEnumerator OnTypingText()
+    {
+        int index = 0;
+
+        isTypingEffect = true;
+        string _dialog = LanguageManager.Instance.GetString(dialogData[currentDialogIndex].dec);
+
+        while (index <= _dialog.Length)
+        {
+            dialogUI.textDialogue.text = _dialog.Substring(0, index);
+            index++;
+
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+        currentDialogIndex++;
+        isTypingEffect = false;
+        dialogUI.objectArrow.SetActive(true);
+    }
+
 
     public void OpenDialogPanel()
     {
         if (gameObject.activeSelf) return;
 
+        GameManager.Instance.SetPlayerMoveStop(true);
         gameObject.SetActive( true );
     }
 
@@ -122,6 +172,12 @@ public class DialogSystem : MonoBehaviour
     {
         if (!gameObject.activeSelf) return;
 
+        GameManager.Instance.SetPlayerMoveStop(false);
         gameObject.SetActive( false );
+    }
+
+    public bool IsDialoging()
+    {
+        return (dialogData.Count != 0);
     }
 }

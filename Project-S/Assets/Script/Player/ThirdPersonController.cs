@@ -116,8 +116,11 @@ namespace StarterAssets
 		private void Update()
 		{
 			_hasAnimator = TryGetComponent(out _animator);
-			
-			Move();
+
+            if (!GameManager.Instance.isPlayerMoveStop)
+			{
+				Move();
+			}
 		}
 
 		private void AssignAnimationIDs()

@@ -10,15 +10,21 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] 
     private DialogSystem dialogSystem;
 
-    public void Start()
+    private void Update()
     {
-        OpenDialog(101);
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            OpenDialog(101);
+        }    
     }
 
     public void OpenDialog(int groupIndex)
     {
-        dialogSystem.SetDialogData(groupIndex);
-        dialogSystem.UpdateDioalog();
-        dialogSystem.OpenDialogPanel();
+        if (!dialogSystem.IsDialoging())
+        {
+            dialogSystem.OpenDialogPanel();
+            dialogSystem.SetDialogData(groupIndex);
+            dialogSystem.UpdateDioalog();
+        }
     }
 }

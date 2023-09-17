@@ -7,6 +7,11 @@ using DG.Tweening;
 public class DOTweenManager : Singleton<DOTweenManager>
 {
 
+    public void MoveRectTransformX(RectTransform rectTransform, float endValue, float duration)
+    {
+        rectTransform.DOAnchorPosX(endValue, duration);
+    }
+
     public void FadeIn(Image image) //페이드 인 사용
     {
         StartCoroutine(Fade(image, true));

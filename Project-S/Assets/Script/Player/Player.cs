@@ -7,7 +7,6 @@ public class Player : MonoBehaviour
     public Transform pivotTooltr;
     private GameObject toolObj;
 
-
     private Animator _animator;
     // Start is called before the first frame update
     void Start()
@@ -28,10 +27,5 @@ public class Player : MonoBehaviour
 
         if(toolObj != Obj)
             toolObj = Instantiate(Obj, pivotTooltr);
-    }
-  
-    public void OnAttack()
-    {
-        _animator.SetTrigger("Attack");
     }
 }
