@@ -117,7 +117,7 @@ namespace StarterAssets
 		{
 			_hasAnimator = TryGetComponent(out _animator);
 
-            if (!GameManager.Instance.isPlayerMoveStop)
+            if (!GameManager.Instance.isPlayerStop)
 			{
 				Move();
 			}

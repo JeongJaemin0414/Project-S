@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public struct CharacterData
+public struct CharacterInfoData
 {
     public string Name;
     public string illustFileName;
@@ -10,9 +10,9 @@ public struct CharacterData
 
 public class CharacterManager : Singleton<CharacterManager>
 {
-    private List<CharacterData> characterData = new();
+    private List<CharacterInfoData> characterinfoData = new();
 
-    private void Awake()
+    protected override void Awake()
     {
         InitCharacterData();
     }
@@ -23,28 +23,28 @@ public class CharacterManager : Singleton<CharacterManager>
 
         foreach (CharacterTableEntity _characterTableEntity in _characterTableEntities)
         {
-            CharacterData _characterData = new()
+            CharacterInfoData _characterInfoData = new()
             {
                 Name = LanguageManager.Instance.GetString(_characterTableEntity.charName),
                 illustFileName = _characterTableEntity.illustFileName
             };
 
-            characterData.Add(_characterData);
+            characterinfoData.Add(_characterInfoData);
         }
     }
 
-    public CharacterData GetCharacterData(int index)
+    public CharacterInfoData GetCharacterInfoData(int index)
     {
-        return characterData[index];
+        return characterinfoData[index];
     }
 
     public string GetCharacterName(int index)
     {
-        return characterData[index].Name;
+        return characterinfoData[index].Name;
     }
 
     public string GetCharacterIllustFileName(int index)
     {
-        return characterData[index].illustFileName;
+        return characterinfoData[index].illustFileName;
     }
 }

@@ -6,9 +6,11 @@ using TMPro;
 
 public class UIManager : Singleton<UIManager>
 {
-
     [SerializeField] 
     private DialogSystem dialogSystem;
+
+    [SerializeField]
+    private InventorySystem inventorySystem;
 
     private void Update()
     {

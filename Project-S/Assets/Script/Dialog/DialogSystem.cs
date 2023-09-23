@@ -38,13 +38,13 @@ public struct DialogUI
 public class DialogSystem : MonoBehaviour
 {
     public DialogUI dialogUI;
-    public List<DialogData> dialogData;
+    private List<DialogData> dialogData = new();
 
     private int currentDialogIndex = 0;
     private bool isTypingEffect = false;
     private float typingSpeed = 0.1f;
 
-    [Header("ÀÌ¹ÌÁö ¿¬Ãâ °ª ¼öÄ¡")]
+    [Header("ì´ë¯¸ì§€ ì—°ì¶œ ìˆ˜ì¹˜")]
     public float ImageMoveValue = 100f;
     public float ImageMoveDuration = 1f;
 
@@ -98,9 +98,9 @@ public class DialogSystem : MonoBehaviour
             }
             else
             {
-                if (dialogData.Count > currentDialogIndex) //´ë»ç°¡ ³²¾ÆÀÖÀ» °æ¿ì
+                if (dialogData.Count > currentDialogIndex) //ï¿½ï¿½ç°¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
                 {
-                    CharacterData _characterData = CharacterManager.Instance.GetCharacterData(dialogData[currentDialogIndex].charIndex);
+                    CharacterInfoData _characterData = CharacterManager.Instance.GetCharacterInfoData(dialogData[currentDialogIndex].charIndex);
                     int _illustIndex = (int)dialogData[currentDialogIndex].illustLocation;
                     string _characterName = _characterData.Name;
                     Sprite _characterImage = Resources.Load<Sprite>("Char/" + _characterData.illustFileName);
@@ -110,7 +110,6 @@ public class DialogSystem : MonoBehaviour
                     dialogUI.textName.text = _characterName;
                     dialogUI.objectArrow.gameObject.SetActive(false);
                     StartCoroutine("OnTypingText");
-                    //dialogUI.textDialogue.text = _dialog;
 
                     switch (dialogData[currentDialogIndex].illustAppear)
                     {
@@ -141,15 +140,15 @@ public class DialogSystem : MonoBehaviour
 
     private IEnumerator OnTypingText()
     {
-        int index = 0;
+        int _index = 0;
 
         isTypingEffect = true;
         string _dialog = LanguageManager.Instance.GetString(dialogData[currentDialogIndex].dec);
 
-        while (index <= _dialog.Length)
+        while (_index <= _dialog.Length)
         {
-            dialogUI.textDialogue.text = _dialog.Substring(0, index);
-            index++;
+            dialogUI.textDialogue.text = _dialog.Substring(0, _index);
+            _index++;
 
             yield return new WaitForSeconds(typingSpeed);
         }
@@ -164,16 +163,16 @@ public class DialogSystem : MonoBehaviour
     {
         if (gameObject.activeSelf) return;
 
-        GameManager.Instance.SetPlayerMoveStop(true);
-        gameObject.SetActive( true );
+        GameManager.Instance.SetPlayerStop(true);
+        gameObject.SetActive(true);
     }
 
     public void CloseDialogPanel()
     {
         if (!gameObject.activeSelf) return;
 
-        GameManager.Instance.SetPlayerMoveStop(false);
-        gameObject.SetActive( false );
+        GameManager.Instance.SetPlayerStop(false);
+        gameObject.SetActive(false);
     }
 
     public bool IsDialoging()
