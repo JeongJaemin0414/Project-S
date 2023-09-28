@@ -17,16 +17,32 @@ public class UIManager : Singleton<UIManager>
         if (Input.GetKeyDown(KeyCode.X))
         {
             OpenDialog(101);
-        }    
+        }   
+        else if (Input.GetKeyDown(KeyCode.Z))
+        {
+            OpenInventory();
+        }
     }
 
     public void OpenDialog(int groupIndex)
     {
-        if (!dialogSystem.IsDialoging())
+        if (!dialogSystem.IsOpening())
         {
-            dialogSystem.OpenDialogPanel();
+            dialogSystem.OpenUISystem();
             dialogSystem.SetDialogData(groupIndex);
             dialogSystem.UpdateDioalog();
+        }
+    }
+
+    public void OpenInventory()
+    {
+        if (!inventorySystem.IsOpening())
+        {
+            inventorySystem.OpenUISystem();
+        }
+        else
+        {
+            inventorySystem.CloseUISystem();
         }
     }
 }

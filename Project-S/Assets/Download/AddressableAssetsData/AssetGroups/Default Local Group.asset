@@ -16,7 +16,17 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: e5f3a50b3b571c6439a037a84c7a67bf
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 18bceebc97798b54f945fafa2c0c4c18
+    m_Address: Char/Skunk2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  - m_GUID: 006f239bac00b044ba96715f69fded75
+    m_Address: Char/Wolf
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 6a220012687e1df41a5486f8eb8ba4a4, type: 2}
   m_SchemaSet:

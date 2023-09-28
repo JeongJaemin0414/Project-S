@@ -51,17 +51,18 @@ public class AddressbleManager : Singleton<AddressbleManager>
         return null;
     }
 
-    public void SetSprite(Sprite sprite, string spriteName)
+    public void SetSprite(Image image, string spriteName)
     {
         Addressables.LoadAssetAsync<Sprite>(spriteName).Completed += handle =>
         {
-            sprite = handle.Result;
+            image.sprite = handle.Result;
         };
     }
 
     public void Start()
     {
-        LoadAssetAsync<GameObject>("Box");
+        LoadAssetAsync<Sprite>("Char/Skunk2");
+        LoadAssetAsync<Sprite>("Char/Wolf");
 
     }
 
