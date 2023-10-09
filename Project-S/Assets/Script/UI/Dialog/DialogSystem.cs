@@ -4,19 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public enum IllustLocation
-{
-    Left,
-    Right
-}
-
-public enum IllustAppear
-{
-    FadeIn,
-    FadeOut,
-    Stay,
-}
-
 [System.Serializable]
 public struct DialogData
 {
@@ -54,6 +41,11 @@ public class DialogSystem : UISystemBase
         {
             UpdateDioalog();
         }
+    }
+
+    public override void Init()
+    {
+
     }
 
     public void SetDialogData(int groupIndex)

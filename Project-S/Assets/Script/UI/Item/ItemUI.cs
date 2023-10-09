@@ -4,15 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public enum ItemType
-{
-    None,
-    Goods,
-    Tool,
-    Food,
-    Seed,
-    Deco,
-}
     
 public class ItemUI : MonoBehaviour
 {

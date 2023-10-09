@@ -1,11 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public enum Tool { 
-    Axe = 1,
-    Pickaxe,
-    Shovel,
-}
 
 public class ToolManager : Singleton<ToolManager>
 {

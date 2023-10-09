@@ -12,6 +12,12 @@ public class UIManager : Singleton<UIManager>
     [SerializeField]
     private InventorySystem inventorySystem;
 
+    private void Start()
+    {
+        dialogSystem.Init();
+        inventorySystem.Init();
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.X))

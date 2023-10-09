@@ -2,12 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum LauguageType
-{
-    kor,
-    eng,
-}
-
 public class LanguageManager : Singleton<LanguageManager>
 {
     private LauguageType languageId = LauguageType.kor;

@@ -3,8 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UISystemBase : MonoBehaviour
+public abstract class UISystemBase : MonoBehaviour
 {
+    public abstract void Init();
+
+    public bool IsOpening()
+    {
+        return gameObject.activeSelf;
+    }
+
     public virtual void OpenUISystem()
     {
         if (gameObject.activeSelf) return;
@@ -21,8 +28,4 @@ public class UISystemBase : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public bool IsOpening()
-    {
-        return gameObject.activeSelf;
-    }
 }
