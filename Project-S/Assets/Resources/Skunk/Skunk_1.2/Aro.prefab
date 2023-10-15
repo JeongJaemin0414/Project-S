@@ -523,7 +523,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3189176764035125176}
-  - component: {fileID: 8836651301254436290}
   m_Layer: 0
   m_Name: Aro
   m_TagString: Untagged
@@ -549,26 +548,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &8836651301254436290
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2813038867564598530}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: be91d0652e1a4c84b9e1f316c901f096, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3990574913755339956
 GameObject:
   m_ObjectHideFlags: 0
