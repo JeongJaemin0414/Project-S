@@ -12,6 +12,9 @@ public class UIManager : Singleton<UIManager>
     [SerializeField]
     private InventorySystem inventorySystem;
 
+    [SerializeField]
+    private TextMeshProUGUI timerText;
+
     private void Start()
     {
         dialogSystem.Init();
@@ -50,5 +53,10 @@ public class UIManager : Singleton<UIManager>
         {
             inventorySystem.CloseUISystem();
         }
+    }
+
+    public void SetTimerText(string time)
+    {
+        timerText.text = time;
     }
 }

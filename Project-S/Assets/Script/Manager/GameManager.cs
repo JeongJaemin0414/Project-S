@@ -19,20 +19,20 @@ public struct InventoryData
 public class GameManager : Singleton<GameManager>
 {
     private CharacterData characterData;
+    private InventoryData inventoryData;
+    public bool isPlayerStop = false;
+
     public CharacterData CharacterData
     {
         get { return characterData; }
         set { characterData = value; }
     }
 
-    private InventoryData inventoryData;
     public InventoryData InventoryData
     {
         get { return inventoryData; }
         set { inventoryData = value; }
     }
-
-    public bool isPlayerStop = false;
 
     protected override void Awake()
     {
