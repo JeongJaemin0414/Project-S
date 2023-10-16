@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!114 &11400000
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -12,4 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8b3af83e85339c4a96b64827a091a03, type: 3}
   m_Name: TimeTable
   m_EditorClassIdentifier: 
-  time: []
+  time:
+  - index: 1
+    timePass: 60
+    maxDay: 30
+    weatherType: 0;10;2;3;4;5
+  - index: 2
+    timePass: 60
+    maxDay: 30
+    weatherType: 0;1;2;3;4;5
+  - index: 3
+    timePass: 60
+    maxDay: 30
+    weatherType: 0;1;2;3;4;5
+  - index: 4
+    timePass: 60
+    maxDay: 30
+    weatherType: 0;1;2;3;4;5
