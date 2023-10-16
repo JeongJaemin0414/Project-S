@@ -27,6 +27,17 @@ public class LanguageTableEntity
     public string engLanguage;
 }
 
+[Serializable]
+public class TimeTableEntity
+{
+    public int index;
+    public int timePass;
+    public int maxDay;
+    public int[] weatherType;
+    //public float[] weatherPercent;
+}
+
+
 public class Entities
 {
 
