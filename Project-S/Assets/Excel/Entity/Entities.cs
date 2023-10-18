@@ -33,8 +33,8 @@ public class TimeTableEntity
     public int index;
     public int timePass;
     public int maxDay;
-    public string weatherType;
-    //public float[] weatherPercent;
+    public string weatherType; //[]
+    public string weatherPercent; //[]
 }
 
 

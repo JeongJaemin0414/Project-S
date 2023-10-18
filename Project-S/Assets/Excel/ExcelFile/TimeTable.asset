@@ -16,16 +16,20 @@ MonoBehaviour:
   - index: 1
     timePass: 60
     maxDay: 30
-    weatherType: 0;10;2;3;4;5
+    weatherType: 0;1;2;3;4;5
+    weatherPercent: 90;0.2;0.2;0.2;0.2;0.2
   - index: 2
     timePass: 60
     maxDay: 30
     weatherType: 0;1;2;3;4;5
+    weatherPercent: 90;0.2;0.2;0.2;0.2;0.2
   - index: 3
     timePass: 60
     maxDay: 30
     weatherType: 0;1;2;3;4;5
+    weatherPercent: 90;0.2;0.2;0.2;0.2;0.2
   - index: 4
     timePass: 60
     maxDay: 30
     weatherType: 0;1;2;3;4;5
+    weatherPercent: 90;0.2;0.2;0.2;0.2;0.2
