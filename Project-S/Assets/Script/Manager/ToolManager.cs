@@ -6,6 +6,11 @@ public class ToolManager : Singleton<ToolManager>
 {
     public List<GameObject> tools = new List<GameObject>();
 
+    public override void Init()
+    {
+
+    }
+
     public GameObject GetTool(Tool tool)
     {
         GameObject obj = null;

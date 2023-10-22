@@ -6,7 +6,11 @@ using DG.Tweening;
 
 public class DOTweenManager : Singleton<DOTweenManager>
 {
+    public override void Init()
+    {
 
+    }
+    
     public void MoveRectTransformX(RectTransform rectTransform, float endValue, float duration)
     {
         rectTransform.DOAnchorPosX(endValue, duration);

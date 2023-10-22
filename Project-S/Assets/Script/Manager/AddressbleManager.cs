@@ -10,6 +10,11 @@ public class AddressbleManager : Singleton<AddressbleManager>
 {
     private Dictionary<string, Object> _bundleObjs = new Dictionary<string, Object>();
 
+    public override void Init()
+    {
+
+    }
+
     public void LoadAssetAsync<T>(string assetName) where T : Object //에셋 로드
     {
         _bundleObjs.TryGetValue(assetName, out Object obj);

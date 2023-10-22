@@ -46,7 +46,15 @@ public enum LauguageType
     eng,
 }
 
-public class EnumUtility 
+public enum SeasonType
+{
+    spring,
+    summer,
+    fall,
+    winter
+}
+
+public class EnumUtil
 {
     
 }

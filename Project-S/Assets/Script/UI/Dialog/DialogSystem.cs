@@ -90,12 +90,11 @@ public class DialogSystem : UISystemBase
             }
             else
             {
-                if (dialogData.Count > currentDialogIndex) //��簡 �������� ���
+                if (dialogData.Count > currentDialogIndex) 
                 {
                     CharacterInfoData _characterData = CharacterManager.Instance.GetCharacterInfoData(dialogData[currentDialogIndex].charIndex);
                     int _illustIndex = (int)dialogData[currentDialogIndex].illustLocation;
                     string _characterName = _characterData.Name;
-                    float _imageMoveValue;
 
                     dialogUI.textName.text = _characterName;
                     dialogUI.objectArrow.SetActive(false);
@@ -105,16 +104,10 @@ public class DialogSystem : UISystemBase
                     switch (dialogData[currentDialogIndex].illustAppear)
                     {
                         case IllustAppear.FadeIn:
-                            _imageMoveValue = (dialogData[currentDialogIndex].illustLocation == IllustLocation.Left) ? ImageMoveValue : -ImageMoveValue;
-
                             DOTweenManager.Instance.FadeIn(dialogUI.images[_illustIndex]);
-                            DOTweenManager.Instance.MoveRectTransformX(dialogUI.images[_illustIndex].rectTransform, _imageMoveValue, 1f);
                             break;
                         case IllustAppear.FadeOut:
-                            _imageMoveValue = (dialogData[currentDialogIndex].illustLocation == IllustLocation.Left) ? -ImageMoveValue : ImageMoveValue;
-
                             DOTweenManager.Instance.FadeOut(dialogUI.images[_illustIndex]);            
-                            DOTweenManager.Instance.MoveRectTransformX(dialogUI.images[_illustIndex].rectTransform, _imageMoveValue, 1f);
                             break;
                     }
                 }
