@@ -19,9 +19,9 @@ public class CharacterManager : Singleton<CharacterManager>
 
     private void InitCharacterData()
     {
-        List<CharacterTableEntity> _characterTableEntities = ExcelManager.Instance.GetExcelData<CharacterTable>().character;
+        List<NpcTableEntity> _characterTableEntities = ExcelManager.Instance.GetExcelData<NpcTable>().npc;
 
-        foreach (CharacterTableEntity _characterTableEntity in _characterTableEntities)
+        foreach (NpcTableEntity _characterTableEntity in _characterTableEntities)
         {
             CharacterInfoData _characterInfoData = new()
             {

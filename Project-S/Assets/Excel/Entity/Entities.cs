@@ -1,7 +1,7 @@
 using System;
 
 [Serializable]
-public class CharacterTableEntity
+public class NpcTableEntity
 {
     public int index;
     public int charName;
