@@ -5,7 +5,12 @@ using UnityEngine;
 public class LanguageManager : Singleton<LanguageManager>
 {
     private LauguageType languageId = LauguageType.kor;
-    
+
+    public override void Init()
+    {
+
+    }
+
     public void SetLanguage(LauguageType lauguageType)
     {
         languageId = lauguageType;

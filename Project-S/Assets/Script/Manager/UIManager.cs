@@ -21,6 +21,11 @@ public class UIManager : Singleton<UIManager>
         inventorySystem.Init();
     }
 
+    public override void Init()
+    {
+
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.X))

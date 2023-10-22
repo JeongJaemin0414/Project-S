@@ -7,6 +7,7 @@ public class SaveData
 {
     public InventoryData inventoryData;
     public CharacterData characterData;
+    public TimeData timeData;
 }
 
 public static class JsonSystem

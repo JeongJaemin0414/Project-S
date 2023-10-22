@@ -2,43 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public struct CharacterData
-{
-    public string name;
-    public int age;
-    public int level; 
-}
-
-[System.Serializable]
-public struct InventoryData
-{
-    public int inventorySize;
-}
-
 public class GameManager : Singleton<GameManager>
 {
-    private CharacterData characterData;
-    private InventoryData inventoryData;
+    private DataSaveLoad dataSaveLoad;
+
     public bool isPlayerStop = false;
-
-    public CharacterData CharacterData
-    {
-        get { return characterData; }
-        set { characterData = value; }
-    }
-
-    public InventoryData InventoryData
-    {
-        get { return inventoryData; }
-        set { inventoryData = value; }
-    }
 
     protected override void Awake()
     {
-        DataSave();
+        dataSaveLoad = GetComponent<DataSaveLoad>();
 
         DataLoad();
+    }
+
+    private void Start()
+    {
+        Init();
+    }
+
+    public override void Init()
+    {
+        TimeManager.Instance.Init();
+        AddressbleManager.Instance.Init();
+        CharacterManager.Instance.Init();
+        DOTweenManager.Instance.Init();
+        ExcelManager.Instance.Init();  
+        LanguageManager.Instance.Init();
+        UIManager.Instance.Init();
     }
 
     public void SetPlayerStop(bool isStop)
@@ -48,26 +38,11 @@ public class GameManager : Singleton<GameManager>
 
     public void DataSave()
     {
-        characterData.name = "Hello";
-        characterData.age = 18;
-        characterData.level = 10;
-
-        inventoryData.inventorySize = 100;
-
-        SaveData saveData = new()
-        {
-            characterData = characterData,
-            inventoryData = inventoryData,
-        };
-
-        JsonSystem.Save(saveData);
+        dataSaveLoad.DataSave();
     }
 
     public void DataLoad()
     {
-        SaveData loadData = JsonSystem.Load();
-
-        characterData = loadData.characterData;
-        inventoryData = loadData.inventoryData;
+        dataSaveLoad.DataLoad();
     }
 }

@@ -17,6 +17,11 @@ public class CharacterManager : Singleton<CharacterManager>
         InitCharacterData();
     }
 
+    public override void Init()
+    {
+
+    }
+
     private void InitCharacterData()
     {
         List<NpcTableEntity> _characterTableEntities = ExcelManager.Instance.GetExcelData<NpcTable>().npc;

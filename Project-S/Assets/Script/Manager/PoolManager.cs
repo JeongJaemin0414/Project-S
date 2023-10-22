@@ -52,6 +52,12 @@ public class PoolManager : Singleton<PoolManager>
 
     private Dictionary<string, ObjectPool<Component>> objectPools = new Dictionary<string, ObjectPool<Component>>();
 
+
+    public override void Init()
+    {
+
+    }
+
     [System.Serializable]
     public class Pool
     {
