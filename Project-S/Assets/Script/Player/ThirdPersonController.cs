@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System;
+
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 #endif
@@ -75,21 +77,18 @@ namespace StarterAssets
 		private float _jumpTimeoutDelta;
 		private float _fallTimeoutDelta;
 
-		// animation IDs
-		private int _animIDSpeed;
-		private int _animIDGrounded;
-		private int _animIDJump;
-		private int _animIDFreeFall;
-		private int _animIDMotionSpeed;
-
-		private Animator _animator;
 		private CharacterController _controller;
 		private StarterAssetsInputs _input;
 		private GameObject _mainCamera;
 
+		private PlayerAnimController playerAnimController;
+
 		private const float _threshold = 0.01f;
 
 		private bool _hasAnimator;
+
+		public PlayerStateType playerState;
+		private IPlayerState currentState;
 
 		private void Awake()
 		{
@@ -102,35 +101,88 @@ namespace StarterAssets
 
 		private void Start()
 		{
-			_hasAnimator = TryGetComponent(out _animator);
 			_controller = GetComponent<CharacterController>();
 			_input = GetComponent<StarterAssetsInputs>();
-
-			AssignAnimationIDs();
+			playerAnimController = GetComponent<PlayerAnimController>();
 
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
+
+			playerAnimController.Init();
+
+			_input.OnChangeInputValue += OnChangeInputValue;
+
+			TransitionToState(new Idle());
 		}
 
 		private void Update()
 		{
-			_hasAnimator = TryGetComponent(out _animator);
+			currentState.UpdateState();
 
-            if (!GameManager.Instance.isPlayerStop)
+			if (!GameManager.Instance.isPlayerStop)
 			{
 				Move();
 			}
 		}
 
-		private void AssignAnimationIDs()
+		private void TransitionToState(IPlayerState newState)
 		{
-			_animIDSpeed = Animator.StringToHash("Speed");
-			_animIDGrounded = Animator.StringToHash("Grounded");
-			_animIDJump = Animator.StringToHash("Jump");
-			_animIDFreeFall = Animator.StringToHash("FreeFall");
-			_animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
+			currentState?.ExitState();
+
+			currentState = newState;
+			currentState.OnEnterStateEnter += OnEnterStateEnter;
+			currentState.OnUpdateStateEnter += OnUpdateStateEnter;
+			currentState.OnExitStateEnter += OnExitStateEnter;
+			currentState.EnterState();
+        }
+
+		public void OnEnterStateEnter(PlayerStateType playerStateType)
+        {
+			playerState = playerStateType;
+
+			switch (playerStateType)
+            {
+				case PlayerStateType.Idle:
+					playerAnimController.PlayAnimCrossFade(playerAnimController.playerAnim.idle.name, 0.3f);
+					break;
+				case PlayerStateType.Walk:
+					playerAnimController.PlayAnimCrossFade(playerAnimController.playerAnim.walk.name, 0.3f);
+					break;
+				case PlayerStateType.Run:
+					playerAnimController.PlayAnimCrossFade(playerAnimController.playerAnim.run.name, 0.3f);
+					break;
+			}
+        }
+
+		public void OnUpdateStateEnter()
+		{
+
 		}
+
+		public void OnExitStateEnter()
+		{
+
+		}
+
+		public void OnChangeInputValue()
+		{
+			if (_input.move == Vector2.zero)
+            {
+				TransitionToState(new Idle());
+            }
+			else
+            {
+                if (!_input.sprint)
+                {
+					TransitionToState(new Walk());
+				}
+                else
+                {
+					TransitionToState(new Run());
+				}
+            }
+        }
 
 		private void Move()
 		{
@@ -184,16 +236,8 @@ namespace StarterAssets
 
 			// move the player
 			_controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
-
-			// update animator if using character
-			if (_hasAnimator)
-			{
-				_animator.SetFloat(_animIDSpeed, _animationBlend);
-				_animator.SetFloat(_animIDMotionSpeed, inputMagnitude);
-			}
 		}
-
-
+		
 		private void OnDrawGizmosSelected()
 		{
 			Color transparentGreen = new Color(0.0f, 1.0f, 0.0f, 0.35f);

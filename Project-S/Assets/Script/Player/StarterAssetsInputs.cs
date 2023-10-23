@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 #endif
@@ -24,7 +25,9 @@ namespace StarterAssets
 		public bool cursorInputForLook = true;
 #endif
 
-        public void Start()
+		public event Action OnChangeInputValue;
+
+		public void Start()
         {
 			player = GetComponent<Player>();
 
@@ -34,6 +37,8 @@ namespace StarterAssets
         public void OnMove(InputValue value)
 		{
 			MoveInput(value.Get<Vector2>());
+
+			OnChangeInputValue?.Invoke();
 		}
 
 		public void OnLook(InputValue value)
@@ -52,6 +57,8 @@ namespace StarterAssets
 		public void OnSprint(InputValue value)
 		{
 			SprintInput(value.isPressed);
+
+			OnChangeInputValue?.Invoke();
 		}
 
 		public void OnNumber(InputValue value)

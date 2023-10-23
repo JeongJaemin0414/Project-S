@@ -1031,9 +1031,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3893294197879345259}
-  - component: {fileID: 6982812146204527121}
   - component: {fileID: 4416926081852918491}
   - component: {fileID: 4416926081852918490}
+  - component: {fileID: 2047589036490776829}
   - component: {fileID: 135756642000475821}
   - component: {fileID: 4416926081852918493}
   m_Layer: 8
@@ -1060,26 +1060,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &6982812146204527121
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4416926081852918481}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: be91d0652e1a4c84b9e1f316c901f096, type: 3}
-  m_Controller: {fileID: 9100000, guid: 40db3173a05ae3242b1c182a09b0a183, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!143 &4416926081852918491
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1129,6 +1109,27 @@ MonoBehaviour:
   BottomClamp: -30
   CameraAngleOverride: 0
   LockCameraPosition: 0
+--- !u!114 &2047589036490776829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416926081852918481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f5336d7f174a8b4e8ad036d34b161fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAnim:
+    idle: {fileID: 7400000, guid: a57698caa226747499acbb33d1f3c7c1, type: 2}
+    walk: {fileID: 7400000, guid: a81b7cc8f83b8af49850151ac10aa42c, type: 2}
+    run: {fileID: 7400000, guid: 40ed4bd29385b5c47b24257348945d00, type: 2}
+    fishingIdle: {fileID: 7400000, guid: be8a1e4c4b2849748ab5690e5293f408, type: 2}
+    fishing: {fileID: 7400000, guid: da7ded3c5c6cbea48aeae900c411fc00, type: 2}
+    ground: {fileID: 7400000, guid: 0102b0c882061d74e857f36f53702d40, type: 2}
+    water: {fileID: 7400000, guid: 8e93ac4a4f02f60489f9b669f49ce9c8, type: 2}
+  anim: {fileID: 8330933400277931772}
 --- !u!114 &135756642000475821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2520,5 +2521,10 @@ PrefabInstance:
 --- !u!4 &6128988878309284400 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3189176764035125176, guid: 23e0062f417cc394099f8946ec4c5c68, type: 3}
+  m_PrefabInstance: {fileID: 8740556379742246280}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &8330933400277931772 stripped
+Animation:
+  m_CorrespondingSourceObject: {fileID: 779644445662331764, guid: 23e0062f417cc394099f8946ec4c5c68, type: 3}
   m_PrefabInstance: {fileID: 8740556379742246280}
   m_PrefabAsset: {fileID: 0}

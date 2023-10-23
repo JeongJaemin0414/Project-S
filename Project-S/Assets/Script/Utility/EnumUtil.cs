@@ -3,6 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+public enum PlayerStateType
+{
+    Idle,
+    Walk,
+    Run,
+    FishingIdle,
+    Fishing,
+    Ground,
+    Water,
+}
+
 public enum ItemType
 {
     None,

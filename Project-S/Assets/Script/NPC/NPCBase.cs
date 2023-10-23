@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 [System.Serializable]
-public class PlayerAnim
+public class NPCAnim
 {
     public AnimationClip idle;
     public AnimationClip walk;
@@ -13,7 +13,7 @@ public class PlayerAnim
 
 public class NPCBase : MonoBehaviour
 {
-    public PlayerAnim playerAnim;
+    public NPCAnim npcAnim;
 
     protected Animation anim;
 
@@ -26,11 +26,11 @@ public class NPCBase : MonoBehaviour
     {
         anim = GetComponent<Animation>();
 
-        anim.AddClip(playerAnim.idle, playerAnim.idle.name);
-        anim.AddClip(playerAnim.walk, playerAnim.walk.name);
-        anim.AddClip(playerAnim.run, playerAnim.run.name);
+        anim.AddClip(npcAnim.idle, npcAnim.idle.name);
+        anim.AddClip(npcAnim.walk, npcAnim.walk.name);
+        anim.AddClip(npcAnim.run, npcAnim.run.name);
 
-        anim.clip = playerAnim.idle;
+        anim.clip = npcAnim.idle;
         anim.Play();
     }
 }

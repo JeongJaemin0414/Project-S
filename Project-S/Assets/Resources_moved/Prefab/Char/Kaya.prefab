@@ -1019,7 +1019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8097aa290710d84c8d1dedce51afc17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAnim:
+  npcAnim:
     idle: {fileID: 7400000, guid: ba70cd31d28a5ef4eb6be684e1181e57, type: 2}
     walk: {fileID: 7400000, guid: bfbae1c1e7f9c3543b794ebe6c95e6c5, type: 2}
     run: {fileID: 7400000, guid: 077cc72cf38fc364a93d9790530c7cb4, type: 2}
