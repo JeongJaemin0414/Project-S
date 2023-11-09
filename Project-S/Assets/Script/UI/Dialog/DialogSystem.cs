@@ -79,10 +79,9 @@ public class DialogSystem : UISystemBase
             {
                 isTypingEffect = false;
 
-                string _dialog = LanguageManager.Instance.GetString(dialogData[currentDialogIndex].dec);
-
                 StopCoroutine("OnTypingText");
-                dialogUI.textDialogue.text = _dialog;
+
+                LanguageManager.Instance.SetText(dialogUI.textDialogue, dialogData[currentDialogIndex].dec);
                 dialogUI.objectArrow.SetActive(true);
 
                 currentDialogIndex++;

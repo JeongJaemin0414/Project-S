@@ -10,7 +10,7 @@ public class Fishing : IPlayerState
     public event Action OnExitStateEnter;
     public void EnterState()
     {
-        OnEnterStateEnter?.Invoke(PlayerStateType.Idle);
+        OnEnterStateEnter?.Invoke(PlayerStateType.Fishing);
     }
 
     public void ExitState()

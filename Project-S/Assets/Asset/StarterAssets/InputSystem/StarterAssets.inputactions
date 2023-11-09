@@ -51,9 +51,18 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Attack",
+                    "name": "Fishing",
                     "type": "Button",
-                    "id": "fc7823be-a99e-471f-a6c9-6c0f76d72baf",
+                    "id": "efe1454c-d290-4500-b3e5-ef3419d0f262",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Ground",
+                    "type": "Button",
+                    "id": "ce675227-a1e3-4395-8ec2-c55dc311a103",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -272,12 +281,23 @@
                 },
                 {
                     "name": "",
-                    "id": "010d45e2-f1d3-458f-b175-3e7bfc9d96b6",
+                    "id": "61a15f80-66b1-4a9c-ac12-638a18eaf96a",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardMouse",
-                    "action": "Attack",
+                    "action": "Fishing",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c1b4e07d-b7aa-49aa-ab3e-b7a608a3368c",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "Ground",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

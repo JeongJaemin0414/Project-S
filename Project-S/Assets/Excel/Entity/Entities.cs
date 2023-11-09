@@ -37,6 +37,44 @@ public class TimeTableEntity
     public string weatherPercent; //[]
 }
 
+[Serializable]
+public class ToolTableEntity
+{
+    public int index;
+    public int toolType;
+    public bool volumeToolType;
+    public float volumeMax; 
+    public float consumeValue;
+    public float chargeValue;
+}
+
+[Serializable]
+public class ItemTableEntity
+{
+    public int index;
+    public int name;
+    public int desc;
+    public ItemType itemType;
+    public string craftMaterial;
+    public string materialValue;
+    public int buyGold;
+    public bool salePossible;
+    public int saleGold;
+}
+
+[Serializable]
+public class CropsTableEntity
+{
+    public int index;
+    public int name;
+    public int desc;
+    public ItemType itemType;
+    public string craftMaterial;
+    public string materialValue;
+    public int buyGold;
+    public bool salePossible;
+    public int saleGold;
+}
 
 public class Entities
 {

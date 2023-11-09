@@ -3,6 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+public enum PlayerActionType
+{
+    Idle,
+    Fishing,
+    Ground,
+    Water,
+}
+
 public enum PlayerStateType
 {
     Idle,

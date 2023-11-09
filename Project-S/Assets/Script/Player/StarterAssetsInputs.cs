@@ -8,7 +8,6 @@ namespace StarterAssets
 {
 	public class StarterAssetsInputs : MonoBehaviour
 	{
-		public Player player;
 
 		[Header("Character Input Values")]
 		public Vector2 move;
@@ -18,6 +17,7 @@ namespace StarterAssets
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
+
 
 #if !UNITY_IOS || !UNITY_ANDROID
 		[Header("Mouse Cursor Settings")]
@@ -29,7 +29,6 @@ namespace StarterAssets
 
 		public void Start()
         {
-			player = GetComponent<Player>();
 
 		}
 
@@ -37,8 +36,6 @@ namespace StarterAssets
         public void OnMove(InputValue value)
 		{
 			MoveInput(value.Get<Vector2>());
-
-			OnChangeInputValue?.Invoke();
 		}
 
 		public void OnLook(InputValue value)
@@ -57,8 +54,6 @@ namespace StarterAssets
 		public void OnSprint(InputValue value)
 		{
 			SprintInput(value.isPressed);
-
-			OnChangeInputValue?.Invoke();
 		}
 
 		public void OnNumber(InputValue value)
@@ -70,6 +65,16 @@ namespace StarterAssets
         {
 			AttackInput();
 		}
+
+		public void OnFishing(InputValue value)
+        {
+			OnChangeInputValue?.Invoke();
+		}
+
+		public void OnGround(InputValue value)
+		{
+
+		}
 #else
 	// old input sys if we do decide to have it (most likely wont)...
 #endif
@@ -78,6 +83,8 @@ namespace StarterAssets
 		public void MoveInput(Vector2 newMoveDirection)
 		{
 			move = newMoveDirection;
+
+			OnChangeInputValue?.Invoke();
 		} 
 
 		public void LookInput(Vector2 newLookDirection)
@@ -93,17 +100,21 @@ namespace StarterAssets
 		public void SprintInput(bool newSprintState)
 		{
 			sprint = newSprintState;
+
+			OnChangeInputValue?.Invoke();
 		}
 
 		public void NumberInput(float newToolNumber)
         {
-			player.OnTool((int)newToolNumber);
+
 		}
 
 		public void AttackInput()
         {
 
         }
+
+
 
 #if !UNITY_IOS || !UNITY_ANDROID
 

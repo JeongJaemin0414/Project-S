@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class LanguageManager : Singleton<LanguageManager>
 {
@@ -21,6 +22,21 @@ public class LanguageManager : Singleton<LanguageManager>
         return languageId;
     }
 
+    public void SetText(TextMeshProUGUI textObj, int stringIndex, string[] values = null)
+    {
+        string str;
+
+        if (values != null)
+        {
+            object[] args = Utilities.GetStringFormatData(values);
+            str = string.Format(GetString(stringIndex), args);
+        }
+        else
+            str = GetString(stringIndex);
+
+        textObj.text = str;
+    }
+
     public string GetString(int stringIndex)
     {
         string _lan = string.Empty;
@@ -38,4 +54,5 @@ public class LanguageManager : Singleton<LanguageManager>
 
         return _lan;
     }
+
 }

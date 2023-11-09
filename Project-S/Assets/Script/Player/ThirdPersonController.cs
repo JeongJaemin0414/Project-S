@@ -14,6 +14,12 @@ namespace StarterAssets
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 	[RequireComponent(typeof(PlayerInput))]
 #endif
+
+	public class PlayerState
+    {
+
+    }
+
 	public class ThirdPersonController : MonoBehaviour
 	{
 		[Header("Player")]
@@ -83,11 +89,9 @@ namespace StarterAssets
 
 		private PlayerAnimController playerAnimController;
 
-		private const float _threshold = 0.01f;
-
-		private bool _hasAnimator;
-
+		public PlayerActionType playerActionType;
 		public PlayerStateType playerState;
+
 		private IPlayerState currentState;
 
 		private void Awake()
@@ -118,6 +122,19 @@ namespace StarterAssets
 
 		private void Update()
 		{
+			if (Input.GetKeyDown(KeyCode.Q))
+			{
+				TransitionToState(new Fishing());
+			}
+			else if (Input.GetKeyDown(KeyCode.E))
+			{
+				TransitionToState(new Ground());
+			}
+			else if (Input.GetKeyDown(KeyCode.R))
+			{
+				TransitionToState(new Water());
+			}
+
 			currentState.UpdateState();
 
 			if (!GameManager.Instance.isPlayerStop)
@@ -128,13 +145,20 @@ namespace StarterAssets
 
 		private void TransitionToState(IPlayerState newState)
 		{
-			currentState?.ExitState();
 
-			currentState = newState;
-			currentState.OnEnterStateEnter += OnEnterStateEnter;
-			currentState.OnUpdateStateEnter += OnUpdateStateEnter;
-			currentState.OnExitStateEnter += OnExitStateEnter;
-			currentState.EnterState();
+			Debug.Log("Current State : " + currentState);
+			Debug.Log("New State : " + newState);
+
+			if(newState != currentState)
+            {
+				currentState?.ExitState();
+
+				currentState = newState;
+				currentState.OnEnterStateEnter += OnEnterStateEnter;
+				currentState.OnUpdateStateEnter += OnUpdateStateEnter;
+				currentState.OnExitStateEnter += OnExitStateEnter;
+				currentState.EnterState();
+			}
         }
 
 		public void OnEnterStateEnter(PlayerStateType playerStateType)
@@ -152,6 +176,15 @@ namespace StarterAssets
 				case PlayerStateType.Run:
 					playerAnimController.PlayAnimCrossFade(playerAnimController.playerAnim.run.name, 0.3f);
 					break;
+				case PlayerStateType.Fishing:
+					playerAnimController.PlayAnimCrossFade(playerAnimController.playerAnim.fishing.name, 0.3f);
+					break;
+				case PlayerStateType.Ground:
+					playerAnimController.PlayAnimCrossFade(playerAnimController.playerAnim.ground.name, 0.3f);
+					break;
+				case PlayerStateType.Water:
+					playerAnimController.PlayAnimCrossFade(playerAnimController.playerAnim.water.name, 0.3f);
+					break;
 			}
         }
 
@@ -167,22 +200,34 @@ namespace StarterAssets
 
 		public void OnChangeInputValue()
 		{
-			if (_input.move == Vector2.zero)
-            {
-				TransitionToState(new Idle());
-            }
-			else
-            {
-                if (!_input.sprint)
-                {
-					TransitionToState(new Walk());
+            //if ()
+            //{
+
+            //}
+            //else
+            //{
+				if (_input.move == Vector2.zero)
+				{
+					TransitionToState(new Idle());
 				}
-                else
-                {
-					TransitionToState(new Run());
+				else
+				{
+					if (!_input.sprint)
+					{
+						TransitionToState(new Walk());
+					}
+					else
+					{
+						TransitionToState(new Run());
+					}
 				}
-            }
+			//}
         }
+
+		public void OnAnimEnd()
+        {
+			
+		}
 
 		private void Move()
 		{
