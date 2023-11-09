@@ -54,7 +54,7 @@ public class ItemTableEntity
     public int index;
     public int name;
     public int desc;
-    public ItemType itemType;
+    public int itemType;
     public string craftMaterial;
     public string materialValue;
     public int buyGold;
@@ -67,14 +67,11 @@ public class CropsTableEntity
 {
     public int index;
     public int name;
-    public int desc;
-    public ItemType itemType;
-    public string craftMaterial;
-    public string materialValue;
-    public int buyGold;
-    public bool salePossible;
-    public int saleGold;
+    public int growthDay;
+    public string growthWeather; //[]
+    public int harvestItem;
 }
+
 
 public class Entities
 {

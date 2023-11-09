@@ -13,57 +13,30 @@ MonoBehaviour:
   m_Name: itemTable
   m_EditorClassIdentifier: 
   item:
-  - index: 1000000
-    name: 0
-    desc: 0
-    itemType: 0
-    craftMaterial: 
-    materialValue: 
-    buyGold: 0
-    salePossible: 0
-    saleGold: 0
-  - index: 1000001
-    name: 0
-    desc: 0
-    itemType: 0
-    craftMaterial: 
-    materialValue: 
-    buyGold: 0
-    salePossible: 0
-    saleGold: 0
   - index: 1100000
-    name: 0
-    desc: 0
-    itemType: 0
-    craftMaterial: 
-    materialValue: 
-    buyGold: 0
+    name: 101001
+    desc: 111001
+    itemType: 2
+    craftMaterial: -1
+    materialValue: -1
+    buyGold: -1
     salePossible: 0
-    saleGold: 0
+    saleGold: 500
   - index: 1100001
-    name: 0
-    desc: 0
-    itemType: 0
-    craftMaterial: 
-    materialValue: 
-    buyGold: 0
+    name: 101002
+    desc: 111002
+    itemType: 2
+    craftMaterial: -1
+    materialValue: -1
+    buyGold: -1
     salePossible: 0
-    saleGold: 0
-  - index: 1101000
-    name: 0
-    desc: 0
-    itemType: 0
-    craftMaterial: 
-    materialValue: 
-    buyGold: 0
+    saleGold: 500
+  - index: 1020000
+    name: 100001
+    desc: 100002
+    itemType: 3
+    craftMaterial: -1
+    materialValue: -1
+    buyGold: -1
     salePossible: 0
-    saleGold: 0
-  - index: 1101001
-    name: 0
-    desc: 0
-    itemType: 0
-    craftMaterial: 
-    materialValue: 
-    buyGold: 0
-    salePossible: 0
-    saleGold: 0
+    saleGold: 500
