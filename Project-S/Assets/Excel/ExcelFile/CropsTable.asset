@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!114 &11400000
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 8
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -16,5 +16,6 @@ MonoBehaviour:
   - index: 1001
     name: 100001
     growthDay: 3
-    growthWeather: 1;2;3
+    fileName: 3
+    growthSeason: 1;2;3
     harvestItem: 1020000

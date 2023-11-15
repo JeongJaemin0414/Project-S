@@ -67,8 +67,9 @@ public class CropsTableEntity
 {
     public int index;
     public int name;
-    public int growthDay;
-    public string growthWeather; //[]
+    public string growthDay; //[]
+    public string fileName; //[]
+    public string growthSeason; //[]
     public int harvestItem;
 }
 
