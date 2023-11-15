@@ -4,29 +4,17 @@ using UnityEngine;
 
 public class ToolManager : Singleton<ToolManager>
 {
-    public List<GameObject> tools = new List<GameObject>();
+    [SerializeField]
+    private SerializableDictionary<PlayerToolType, GameObject> tools;
 
     public override void Init()
     {
 
     }
 
-    public GameObject GetTool(Tool tool)
+    public GameObject GetTool(PlayerToolType toolType)
     {
-        GameObject obj = null;
-
-        switch (tool)
-        {
-            case Tool.Axe:
-                obj = tools[0];
-                break;
-            case Tool.Pickaxe:
-                obj = tools[1];
-                break;
-            case Tool.Shovel:
-                obj = tools[2];
-                break;
-        }
+        GameObject obj = tools[toolType];
 
         return obj;
     }

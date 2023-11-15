@@ -3,24 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fishing : IPlayerState
+public class Fishing : State
 {
-    public event Action<PlayerStateType> OnEnterStateEnter;
-    public event Action OnUpdateStateEnter;
-    public event Action OnExitStateEnter;
-    public void EnterState()
+    public override void EnterState()
     {
-        OnEnterStateEnter?.Invoke(PlayerStateType.Fishing);
     }
 
-    public void ExitState()
+    public override void UpdateState()
     {
-        OnUpdateStateEnter?.Invoke();
+        if (!stateData.anim.isPlaying)
+        {
+            FarmManager.Instance.CreateCrops(gameObject.transform.position);
+            stateData.onActionEnd?.Invoke();
+        }
     }
 
-    public void UpdateState()
+    public override void ExitState()
     {
-        OnExitStateEnter?.Invoke();
     }
+
 
 }

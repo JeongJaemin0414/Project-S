@@ -16,11 +16,14 @@ public struct PlayerAnim
 
 public class PlayerAnimController : MonoBehaviour
 {
-    public PlayerAnim playerAnim;
+    [SerializeField]
+    private PlayerAnim playerAnim;
 
     [Header("Animation Component")]
     public Animation anim;
 
+    [SerializeField] 
+    private SerializableDictionary<PlayerToolType, string> playerHeadAnimName;
     public void Init()
     {
         if(anim != null)
@@ -35,8 +38,12 @@ public class PlayerAnimController : MonoBehaviour
         }
     }
 
-    public void PlayAnimCrossFade(string animName, float fadeLength)
+    public void PlayAnimCrossFade(string animName, float fadeLength, PlayerToolType playerToolType = PlayerToolType.Idle)
     {
-        anim.CrossFade(animName, fadeLength);
+        string totalAnimName = "Aro_" + playerHeadAnimName[playerToolType] + animName;
+
+        Debug.Log("AnimName : " + totalAnimName);
+
+        anim.CrossFade(totalAnimName, fadeLength);
     }
 }

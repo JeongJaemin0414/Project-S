@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public enum PlayerActionType
+public enum PlayerToolType
 {
     Idle,
-    Fishing,
-    Ground,
-    Water,
+    Axe,
+    Hoe,
+    Pickaxe,
+    Shovel,
+    WaterCan,
 }
 
 public enum PlayerStateType

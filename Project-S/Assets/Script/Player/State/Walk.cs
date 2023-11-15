@@ -3,24 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Walk : IPlayerState
+public class Walk : State
 {
-    public event Action<PlayerStateType> OnEnterStateEnter;
-    public event Action OnUpdateStateEnter;
-    public event Action OnExitStateEnter;
-    public void EnterState()
+    public override void EnterState()
     {
-        OnEnterStateEnter?.Invoke(PlayerStateType.Walk);
+
     }
 
-    public void ExitState()
+    public override void ExitState()
     {
-        OnUpdateStateEnter?.Invoke();
+
     }
 
-    public void UpdateState()
+    public override void UpdateState()
     {
-        OnExitStateEnter?.Invoke();
+
     }
 
 }

@@ -29,6 +29,7 @@ public class GameManager : Singleton<GameManager>
         ExcelManager.Instance.Init();  
         LanguageManager.Instance.Init();
         UIManager.Instance.Init();
+        FarmManager.Instance.Init();
     }
 
     public void SetPlayerStop(bool isStop)

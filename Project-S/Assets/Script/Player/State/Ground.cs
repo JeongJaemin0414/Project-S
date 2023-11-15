@@ -3,24 +3,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ground : IPlayerState
+public class Ground : State
 {
-    public event Action<PlayerStateType> OnEnterStateEnter;
-    public event Action OnUpdateStateEnter;
-    public event Action OnExitStateEnter;
-    public void EnterState()
+    public override void EnterState()
     {
-        OnEnterStateEnter?.Invoke(PlayerStateType.Ground);
+
     }
 
-    public void ExitState()
+    public override void UpdateState()
     {
-        OnUpdateStateEnter?.Invoke();
+        if (!stateData.anim.isPlaying)
+        {
+            stateData.onActionEnd?.Invoke();
+        }
     }
 
-    public void UpdateState()
+    public override void ExitState()
     {
-        OnExitStateEnter?.Invoke();
+
     }
+
 
 }

@@ -2366,9 +2366,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tools:
-  - {fileID: 18008095503012359, guid: ebd12dd249a9ef041ace0c801df7cb58, type: 3}
-  - {fileID: 8234146512507840093, guid: eb3fa0c9027882b4084517c1a3342a1f, type: 3}
-  - {fileID: 2107445268991262960, guid: c2a5ce7a51631494195248903c6c32cd, type: 3}
+    array:
+    - Key: 0
+      Value: {fileID: 0}
+    - Key: 2
+      Value: {fileID: 7048498844631112960, guid: bffa157e95acc1443bf9182f3ba5a28a, type: 3}
+    - Key: 5
+      Value: {fileID: 3928642541961935006, guid: 8877f4aac7d3c184ea4954647487e084, type: 3}
 --- !u!1001 &445810656
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2518,6 +2522,7 @@ Transform:
   - {fileID: 2105330740}
   - {fileID: 587116814}
   - {fileID: 367285862}
+  - {fileID: 1487685581}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10538,6 +10543,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c32a3b6f8810e5d4bade55b3dffd779e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1487685580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1487685581}
+  - component: {fileID: 1487685582}
+  m_Layer: 0
+  m_Name: FarmManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1487685581
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487685580}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 452668090}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1487685582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487685580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc109c76a3039c4b9f78a28738ef901, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Crops: {fileID: 8209775890509911002, guid: c097d60aa3473ee43892b2a83934be68, type: 3}
 --- !u!1 &1504804061
 GameObject:
   m_ObjectHideFlags: 0
