@@ -11,14 +11,7 @@ public class ExcelManager : Singleton<ExcelManager>
 
     public void Start()
     {
-        string q = "1";
-        string w = "2";
-        
-        
-
-
-
-        foreach (float i in Utilities.GetArrayDataFloat(GetExcelData<TimeTable>().time[0].weatherPercent))
+        foreach (string i in Utilities.GetArrayDataString(GetExcelData<CropsTable>().crops[0].fileName))
         {
             Debug.Log(i);
         }

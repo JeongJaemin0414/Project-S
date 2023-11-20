@@ -905,6 +905,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6729eb4bf3ffb9049877d448df14dec4, type: 2}
   - {fileID: 11400000, guid: 08d778dd3967720408423e9f319661cb, type: 2}
   - {fileID: 11400000, guid: 4fef14c1bb035984b829a9ef1b6ec036, type: 2}
+  - {fileID: 11400000, guid: 4488e5fe899fe754281589b6d51ddcf3, type: 2}
+  - {fileID: 11400000, guid: cb885d25be7d2d448b6bee1af55bcf6d, type: 2}
+  - {fileID: 11400000, guid: 9cdd2893faa47fd41834c2a015192a93, type: 2}
 --- !u!1 &162604398
 GameObject:
   m_ObjectHideFlags: 0
@@ -10587,7 +10590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bc109c76a3039c4b9f78a28738ef901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Crops: {fileID: 8209775890509911002, guid: c097d60aa3473ee43892b2a83934be68, type: 3}
+  Crops: {fileID: 53686370519941777, guid: c097d60aa3473ee43892b2a83934be68, type: 3}
 --- !u!1 &1504804061
 GameObject:
   m_ObjectHideFlags: 0
@@ -12495,15 +12498,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3893294197879345259, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3893294197879345259, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3893294197879345259, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3893294197879345259, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

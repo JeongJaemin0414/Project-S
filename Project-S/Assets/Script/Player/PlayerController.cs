@@ -162,6 +162,9 @@ public class PlayerController : MonoBehaviour
         OnChangeStateInputValue();
     }
 
+    private RaycastHit hit;
+    private float maxDistance = 500f;
+
     public void OnChangeStateInputValue()
     {
         if (playerinputs.isActioning)
@@ -171,6 +174,22 @@ public class PlayerController : MonoBehaviour
                 case PlayerToolType.Idle:
 
                     playerinputs.isActioning = false;
+
+                    if (Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), transform.forward, out hit, maxDistance))
+                    {
+                        Debug.Log("hit point : " + hit.point + ", distance : " + hit.distance + ", name : " + hit.collider.name);
+                        Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.red);
+                        
+                        if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Crops"))
+                        {
+                            Debug.Log("Hit Crops !");
+                            hit.collider.gameObject.GetComponentInParent<Crops>().HarvestCrops();
+                        }
+                    }
+                    else
+                    {
+                        Debug.DrawRay(transform.position, transform.forward * maxDistance, Color.red);
+                    }
 
                     break;
                 case PlayerToolType.Hoe:

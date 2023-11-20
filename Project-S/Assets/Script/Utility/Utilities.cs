@@ -29,4 +29,15 @@ public static class Utilities
         float[] fq = s1.Split(';').Select(n => Convert.ToSingle(n)).ToArray();
         return fq;
     }
+
+    public static string[] GetArrayDataString(string s1)
+    {
+        string[] sq = s1.Split(';').ToArray();
+        return sq;
+    }
+
+    public static int ConvertDayToTime(int day)
+    {
+        return day * 3600 * 24;
+    }
 }

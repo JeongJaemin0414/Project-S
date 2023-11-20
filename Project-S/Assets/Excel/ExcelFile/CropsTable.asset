@@ -16,6 +16,6 @@ MonoBehaviour:
   - index: 1001
     name: 100001
     growthDay: 3
-    fileName: 3
+    fileName: 3;2;3
     growthSeason: 1;2;3
     harvestItem: 1020000

@@ -14,6 +14,7 @@ public class Water : State
         if (!stateData.anim.isPlaying)
         {
             stateData.onActionEnd?.Invoke();
+            FarmManager.Instance.OnCrops(gameObject.transform.position);
         }
     }
 
