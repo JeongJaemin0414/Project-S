@@ -16,6 +16,8 @@ MonoBehaviour:
   - index: 1001
     name: 100001
     growthDay: 3
-    fileName: 3;2;3
+    fileName: CropsTomato
     growthSeason: 1;2;3
     harvestItem: 1020000
+    harvestItemValue: 2;3
+    harvestItemPercent: 50;50

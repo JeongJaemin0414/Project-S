@@ -71,6 +71,8 @@ public class CropsTableEntity
     public string fileName; //[]
     public string growthSeason; //[]
     public int harvestItem;
+    public string harvestItemValue; //[]
+    public string harvestItemPercent; //[]
 }
 
 
