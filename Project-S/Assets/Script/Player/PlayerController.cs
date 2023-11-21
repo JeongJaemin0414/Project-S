@@ -186,10 +186,6 @@ public class PlayerController : MonoBehaviour
                             hit.collider.gameObject.GetComponentInParent<Crops>().HarvestCrops();
                         }
                     }
-                    else
-                    {
-                        Debug.DrawRay(transform.position, transform.forward * maxDistance, Color.red);
-                    }
 
                     break;
                 case PlayerToolType.Hoe:
