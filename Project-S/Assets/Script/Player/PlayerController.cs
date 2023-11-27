@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour
 
         currentState.UpdateState();
 
-        if (!GameManager.Instance.isPlayerStop)
+        if (!GameManager.Instance.isPlayerStop && !playerinputs.isActioning)
         {
             JumpAndGravity();
             Move();
@@ -243,7 +243,7 @@ public class PlayerController : MonoBehaviour
     {
         float targetSpeed = playerinputs.sprint ? SprintSpeed : MoveSpeed;
 
-        if (playerinputs.move == Vector2.zero || playerinputs.isActioning) targetSpeed = 0.0f;
+        if (playerinputs.move == Vector2.zero) targetSpeed = 0.0f;
 
         float currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
 

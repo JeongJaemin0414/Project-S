@@ -75,9 +75,12 @@ public class PlayerInputs : MonoBehaviour
 
 	public void ActionInput(bool newActionState)
     {
-		isActioning = newActionState;
-		Debug.Log(isActioning);
-		OnChangeStateInputValue?.Invoke();
+        if (!isActioning)
+        {
+			isActioning = newActionState;
+			Debug.Log(isActioning);
+			OnChangeStateInputValue?.Invoke();
+		}
 	}
 
 	public void NumberInput(float newNumber)

@@ -5,16 +5,20 @@ using UnityEngine;
 
 public class Water : State
 {
+    private Vector3 cropsPos;
     public override void EnterState()
     {
+        cropsPos = GetMousePointinDistance();
+        LookTarget(cropsPos);
     }
 
     public override void UpdateState()
     {
         if (!stateData.anim.isPlaying)
         {
+            FarmManager.Instance.OnCrops(cropsPos);
+
             stateData.onActionEnd?.Invoke();
-            FarmManager.Instance.OnCrops(gameObject.transform.position);
         }
     }
 
