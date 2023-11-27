@@ -27,7 +27,7 @@ public class ExcelManager : Singleton<ExcelManager>
 
         if (matchingItems.Count == 0)
         {
-            return default; 
+            return default;
         }
 
         return matchingItems[0];
