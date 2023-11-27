@@ -158,7 +158,8 @@ public class PlayerController : MonoBehaviour
 
     public void OnActionEnd()
     {
-        playerinputs.isActioning = false;
+        playerinputs.ClearStateValue();
+        
         OnChangeStateInputValue();
     }
 
@@ -173,19 +174,21 @@ public class PlayerController : MonoBehaviour
             {
                 case PlayerToolType.Idle:
 
-                    playerinputs.isActioning = false;
+                    //playerinputs.isActioning = false;
 
-                    if (Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), transform.forward, out hit, maxDistance))
-                    {
-                        Debug.Log("hit point : " + hit.point + ", distance : " + hit.distance + ", name : " + hit.collider.name);
-                        Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.red);
+                    TransitionToState(gameObject.AddComponent<Ground>());
+
+                    //if (Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), transform.forward, out hit, maxDistance))
+                    //{
+                    //    Debug.Log("hit point : " + hit.point + ", distance : " + hit.distance + ", name : " + hit.collider.name);
+                    //    Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.red);
                         
-                        if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Crops"))
-                        {
-                            Debug.Log("Hit Crops !");
-                            hit.collider.gameObject.GetComponentInParent<Crops>().HarvestCrops();
-                        }
-                    }
+                    //    if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Crops"))
+                    //    {
+                    //        Debug.Log("Hit Crops !");
+                    //        hit.collider.gameObject.GetComponentInParent<Crops>().HarvestCrops();
+                    //    }
+                    //}
 
                     break;
                 case PlayerToolType.Hoe:
@@ -243,7 +246,11 @@ public class PlayerController : MonoBehaviour
     {
         float targetSpeed = playerinputs.sprint ? SprintSpeed : MoveSpeed;
 
-        if (playerinputs.move == Vector2.zero) targetSpeed = 0.0f;
+        if (playerinputs.move == Vector2.zero)
+        {
+            targetSpeed = 0.0f;
+            _controller.SimpleMove(Vector3.zero);
+        }
 
         float currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
 
