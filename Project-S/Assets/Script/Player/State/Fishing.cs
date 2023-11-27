@@ -17,7 +17,6 @@ public class Fishing : State
         if (!stateData.anim.isPlaying)
         {
             FarmManager.Instance.CreateCrops(cropsPos);
-        
             stateData.onActionEnd?.Invoke();
         }
     }

@@ -8,13 +8,25 @@ public class Crops : MonoBehaviour
     public GameObject tomato;
 
     public GameObject currentTomatoPlant;
+
+    private bool isWatering = false;
+
     public void SetCrops(CropsData cropsData)
     {
-        //cropsData.growthDay[0]
-        int time = Utilities.ConvertDayToTime(1);
-        TimeManager.Instance.AddTimer(time, OnGrowthCrops);
+        if (!isWatering)
+        {
+            isWatering = true;
 
-        Debug.Log("Set Crops!");
+            //cropsData.growthDay[0]
+            int time = Utilities.ConvertDayToTime(1);
+            TimeManager.Instance.AddTimer(time, OnGrowthCrops);
+
+            Debug.Log("Set Crops!");
+        }
+        else
+        {
+            Debug.Log("Already Set Crops !");
+        }
     }
 
     public void OnGrowthCrops()
