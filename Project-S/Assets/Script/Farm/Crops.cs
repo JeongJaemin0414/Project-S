@@ -25,7 +25,7 @@ public class Crops : MonoBehaviour
 
     public void HarvestCrops()
     {
-        for(int i = 0; i < 3; i++)
+        for (int i = 0; i < 3; i++)
         {
             Vector3 randomPos = new(currentTomatoPlant.transform.position.x + Random.Range(-1f, 1f), currentTomatoPlant.transform.position.y + 0.5f, currentTomatoPlant.transform.position.z + Random.Range(-1f, 1f));
             Instantiate(tomato, randomPos, Quaternion.identity);
