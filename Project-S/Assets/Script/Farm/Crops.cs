@@ -10,6 +10,7 @@ public class Crops : MonoBehaviour
     public GameObject currentTomatoPlant;
 
     private bool isWatering = false;
+    private bool isGrowUp = false;
 
     public void SetCrops(CropsData cropsData)
     {
@@ -33,16 +34,24 @@ public class Crops : MonoBehaviour
     {
         currentTomatoPlant = Instantiate(tomatoPlant, gameObject.transform.position, Quaternion.identity);
         currentTomatoPlant.transform.SetParent(gameObject.transform);
+        isGrowUp = true;
     }
 
     public void HarvestCrops()
     {
-        for (int i = 0; i < 3; i++)
+        if (isGrowUp)
         {
-            Vector3 randomPos = new(currentTomatoPlant.transform.position.x + Random.Range(-1f, 1f), currentTomatoPlant.transform.position.y + 0.5f, currentTomatoPlant.transform.position.z + Random.Range(-1f, 1f));
-            Instantiate(tomato, randomPos, Quaternion.identity);
-        }
+            for (int i = 0; i < 3; i++)
+            {
+                Vector3 randomPos = new(currentTomatoPlant.transform.position.x + Random.Range(-1f, 1f), currentTomatoPlant.transform.position.y + 0.5f, currentTomatoPlant.transform.position.z + Random.Range(-1f, 1f));
+                Instantiate(tomato, randomPos, Quaternion.identity);
+            }
 
-        Destroy(gameObject);
+            Destroy(gameObject);
+        }
+        else
+        {
+            Debug.Log("Not GrowUp !");
+        }
     }
 }
