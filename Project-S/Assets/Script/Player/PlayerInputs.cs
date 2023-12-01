@@ -33,6 +33,15 @@ public class PlayerInputs : MonoBehaviour
 
 	}
 
+	public void ClearStateValue()
+    {
+		move = Vector2.zero;
+		look = Vector2.zero;
+		jump = false;
+		sprint = false;
+		isActioning = false;
+	}
+
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
     public void OnMove(InputValue value)
 	{
@@ -63,22 +72,25 @@ public class PlayerInputs : MonoBehaviour
 	{
 		move = newMoveDirection;
 
-		OnChangeStateInputValue?.Invoke();
+		if (!isActioning)
+			OnChangeStateInputValue?.Invoke();
 	} 
 
 	public void SprintInput(bool newSprintState)
 	{
 		sprint = newSprintState;
 
-		OnChangeStateInputValue?.Invoke();
+		if (!isActioning)
+			OnChangeStateInputValue?.Invoke();
 	}
 
 	public void ActionInput(bool newActionState)
-    {
-        if (!isActioning)
+	{
+		if (!isActioning)
         {
 			isActioning = newActionState;
 			Debug.Log(isActioning);
+
 			OnChangeStateInputValue?.Invoke();
 		}
 	}
@@ -86,7 +98,9 @@ public class PlayerInputs : MonoBehaviour
 	public void NumberInput(float newNumber)
 	{
 		number = newNumber;
-		OnChangeNumberInputValue?.Invoke();
+
+		if (!isActioning)
+			OnChangeNumberInputValue?.Invoke();
 	}
 
 

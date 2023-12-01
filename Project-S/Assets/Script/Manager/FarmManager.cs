@@ -15,11 +15,16 @@ public class FarmManager : Singleton<FarmManager>
 {
     public Crops Crops;
 
-    public Dictionary<int, CropsData> cropsDatas = new Dictionary<int, CropsData>();
+    public Dictionary<int, CropsData> cropsDatas = new ();
 
-    public Dictionary<Vector3, Crops> cropsObjs = new Dictionary<Vector3, Crops>();
+    public Dictionary<Vector3, Crops> cropsObjs = new ();
 
     public override void Init()
+    {
+        InitCropsData();
+    }
+
+    public void InitCropsData()
     {
         List<CropsTableEntity> cropsTableEntities = ExcelManager.Instance.GetExcelData<CropsTable>().crops;
 
@@ -44,9 +49,9 @@ public class FarmManager : Singleton<FarmManager>
         float cropsPosZ = Mathf.Round(cropsPos.z);
         cropsPos = new Vector3(cropsPosX, 0, cropsPosZ);
 
-        Debug.Log("CropsPos : " + cropsPos);
+        Debug.Log("< Create > CropsPos : " + cropsPos);
 
-        if(!cropsObjs.ContainsKey(cropsPos))
+        if (!cropsObjs.ContainsKey(cropsPos))
         {
             Crops crops = Instantiate(Crops, cropsPos, Quaternion.identity);
             cropsObjs[cropsPos] = crops;
@@ -63,9 +68,9 @@ public class FarmManager : Singleton<FarmManager>
         float cropsPosZ = Mathf.Round(cropsPos.z);
         cropsPos = new Vector3(cropsPosX, 0, cropsPosZ);
 
-        Debug.Log("CropsPos : " + cropsPos);
+        Debug.Log("< Set > CropsPos : " + cropsPos);
 
-        if(cropsObjs.TryGetValue(cropsPos, out Crops crops))
+        if (cropsObjs.TryGetValue(cropsPos, out Crops crops))
         {
             if (cropsDatas.TryGetValue(cropsIndex, out CropsData cropsData))
             {
@@ -81,5 +86,24 @@ public class FarmManager : Singleton<FarmManager>
     public void OnCrops(Vector3 cropsPos)
     {
         SetCrops(cropsPos, 1001);
+    }
+
+    public void HarvestCrops(Vector3 cropsPos)
+    {
+        float cropsPosX = Mathf.Round(cropsPos.x);
+        float cropsPosZ = Mathf.Round(cropsPos.z);
+        cropsPos = new Vector3(cropsPosX, 0, cropsPosZ);
+
+        Debug.Log("< Harvest > CropsPos : " + cropsPos);
+
+        if (cropsObjs.TryGetValue(cropsPos, out Crops crops))
+        {
+            crops.HarvestCrops();
+            cropsObjs.Remove(cropsPos);
+        }
+        else
+        {
+            Debug.Log("Empty Crops!");
+        }
     }
 }

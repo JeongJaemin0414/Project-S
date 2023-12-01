@@ -10,16 +10,11 @@ public struct CharacterInfoData
 
 public class CharacterManager : Singleton<CharacterManager>
 {
-    private List<CharacterInfoData> characterinfoData = new();
-
-    protected override void Awake()
-    {
-        InitCharacterData();
-    }
+    private Dictionary<int, CharacterInfoData> characterinfoData = new();
 
     public override void Init()
     {
-
+        InitCharacterData();
     }
 
     private void InitCharacterData()
@@ -34,7 +29,7 @@ public class CharacterManager : Singleton<CharacterManager>
                 illustFileName = _characterTableEntity.illustFileName
             };
 
-            characterinfoData.Add(_characterInfoData);
+            characterinfoData.Add(_characterTableEntity.index, _characterInfoData);
         }
     }
 

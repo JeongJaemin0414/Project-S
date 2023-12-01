@@ -11,10 +11,10 @@ public class ExcelManager : Singleton<ExcelManager>
 
     public void Start()
     {
-        foreach (string i in Utilities.GetArrayDataString(GetExcelData<CropsTable>().crops[0].fileName))
-        {
-            Debug.Log(i);
-        }
+        //foreach (string i in Utilities.GetArrayDataString(GetExcelData<CropsTable>().crops[0].fileName))
+        //{
+        //    Debug.Log(i);
+        //}
     }
 
     public override void Init()

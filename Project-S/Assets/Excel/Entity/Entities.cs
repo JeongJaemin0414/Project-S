@@ -53,6 +53,7 @@ public class ItemTableEntity
 {
     public int index;
     public int name;
+    public string resourceName;
     public int desc;
     public int itemType;
     public string craftMaterial;
