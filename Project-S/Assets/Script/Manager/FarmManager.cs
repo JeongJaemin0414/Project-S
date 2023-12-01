@@ -15,11 +15,16 @@ public class FarmManager : Singleton<FarmManager>
 {
     public Crops Crops;
 
-    public Dictionary<int, CropsData> cropsDatas = new Dictionary<int, CropsData>();
+    public Dictionary<int, CropsData> cropsDatas = new ();
 
-    public Dictionary<Vector3, Crops> cropsObjs = new Dictionary<Vector3, Crops>();
+    public Dictionary<Vector3, Crops> cropsObjs = new ();
 
     public override void Init()
+    {
+        InitCropsData();
+    }
+
+    public void InitCropsData()
     {
         List<CropsTableEntity> cropsTableEntities = ExcelManager.Instance.GetExcelData<CropsTable>().crops;
 

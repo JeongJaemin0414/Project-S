@@ -37,10 +37,10 @@ public class DialogSystem : UISystemBase
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            UpdateDioalog();
-        }
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    UpdateDioalog();
+        //}
     }
 
     public override void Init()

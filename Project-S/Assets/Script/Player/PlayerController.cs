@@ -148,7 +148,7 @@ public class PlayerController : MonoBehaviour
         currentState.Init(stateData);
         currentState.EnterState();
 
-        playerAnimController.PlayAnimCrossFade(currentState.GetType().Name, 0.5f);
+        playerAnimController.PlayAnimCrossFade(currentState.GetType().Name, 0.3f);
     }
 
     public void ExitState()

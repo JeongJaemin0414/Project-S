@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d3193db5568e423479b2c04d2a39888c, type: 3}
-  m_Name: itemTable
+  m_Name: ItemTable
   m_EditorClassIdentifier: 
   item:
   - index: 1100000
     name: 101001
+    resourceName: 
     desc: 111001
     itemType: 2
     craftMaterial: -1
@@ -24,6 +25,7 @@ MonoBehaviour:
     saleGold: 500
   - index: 1100001
     name: 101002
+    resourceName: 
     desc: 111002
     itemType: 2
     craftMaterial: -1
@@ -33,6 +35,7 @@ MonoBehaviour:
     saleGold: 500
   - index: 1020000
     name: 100001
+    resourceName: tomato
     desc: 100002
     itemType: 3
     craftMaterial: -1

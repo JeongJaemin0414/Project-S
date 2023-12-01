@@ -15,49 +15,49 @@ MonoBehaviour:
   dialog:
   - index: 101001
     group: 101
-    charIndex: 0
+    charIndex: 1
     dec: 10101
     illustLocation: 0
     illustAppear: 0
   - index: 101002
     group: 101
-    charIndex: 0
+    charIndex: 1
     dec: 10102
     illustLocation: 0
     illustAppear: 2
   - index: 101003
     group: 101
-    charIndex: 1
+    charIndex: 2
     dec: 10103
     illustLocation: 1
     illustAppear: 0
   - index: 101004
     group: 101
-    charIndex: 1
+    charIndex: 2
     dec: 10104
     illustLocation: 1
     illustAppear: 2
   - index: 101005
     group: 101
-    charIndex: 0
+    charIndex: 1
     dec: 10105
     illustLocation: 0
     illustAppear: 2
   - index: 101006
     group: 101
-    charIndex: 0
+    charIndex: 1
     dec: 10106
     illustLocation: 0
     illustAppear: 1
   - index: 101007
     group: 101
-    charIndex: 1
+    charIndex: 2
     dec: 10107
     illustLocation: 1
     illustAppear: 2
   - index: 101008
     group: 101
-    charIndex: 1
+    charIndex: 2
     dec: 10108
     illustLocation: 1
     illustAppear: 1
