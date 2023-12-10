@@ -3,21 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-[Serializable]
-public struct ItemData
-{
-    public string name;
-    public string desc;
-    public string iconResourceName;
-    public string modelResourceName;
-    public ItemType itemType;
-    public int[] craftMaterial;
-    public int[] materialValue;
-    public int buyGold;
-    public bool salePossible;
-    public int saleGold;
-    public int invenMaxCount;
-}
+//여기 있던 ItemData 별도 파일로 분리해서 이동.
 
 public class ItemManager : Singleton<ItemManager>
 {
