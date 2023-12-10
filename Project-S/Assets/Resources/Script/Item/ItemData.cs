@@ -3,11 +3,13 @@ public struct ItemData
 {
     public string name;
     public string desc;
-    public string resourceName;
+    public string iconResourceName;
+    public string modelResourceName;
     public ItemType itemType;
     public int[] craftMaterial;
     public int[] materialValue;
     public int buyGold;
     public bool salePossible;
     public int saleGold;
+    public int invenMaxCount;
 }

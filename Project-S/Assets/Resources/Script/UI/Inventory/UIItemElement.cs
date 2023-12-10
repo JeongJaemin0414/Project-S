@@ -37,7 +37,7 @@ public class UIItemElement : UIView
                 {
                     itemImage.gameObject.SetActive(true);
                     //단 data 가 프리펩을 말하는지 아이콘을 말하는지는 아직 모름 수정 예정
-                    AddressbleManager.Instance.SetSprite(itemImage, data.resourceName);
+                    AddressbleManager.Instance.SetSprite(itemImage, data.iconResourceName);
 
                     if (this.count > 1)
                     {
@@ -54,7 +54,7 @@ public class UIItemElement : UIView
                     itemImage.gameObject.SetActive(true);
                     itemCount.gameObject.SetActive(false);
 
-                    AddressbleManager.Instance.SetSprite(itemImage, data.resourceName);
+                    AddressbleManager.Instance.SetSprite(itemImage, data.iconResourceName);
                 }
                 break;
         }
