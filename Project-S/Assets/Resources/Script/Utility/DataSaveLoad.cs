@@ -23,7 +23,7 @@ public class DataSaveLoad : MonoBehaviour
             timeData = new()
         };
 
-        saveData.inventoryData.inventorySize = 24;
+        saveData.inventoryData.inventorySize = 16;
         saveData.inventoryData.inventoryitemDatas = new InventoryItemData[saveData.inventoryData.inventorySize];
 
         saveData.timeData.seasonType = SeasonType.spring;

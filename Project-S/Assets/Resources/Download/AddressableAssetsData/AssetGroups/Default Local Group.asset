@@ -25,12 +25,12 @@ MonoBehaviour:
     m_Address: tomato_model
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: ae85e57cc13c05e48a8591b56043241e
-    m_Address: InventoryItem
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 3bfb35c0c521ed14aa98f045c0bf8d12
     m_Address: tomato_icon
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ae85e57cc13c05e48a8591b56043241e
+    m_Address: InventoryItem
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
