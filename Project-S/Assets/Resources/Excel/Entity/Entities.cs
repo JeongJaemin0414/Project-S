@@ -53,7 +53,8 @@ public class ItemTableEntity
 {
     public int index;
     public int name;
-    public string resourceName;
+    public string iconResourceName;
+    public string modelResourceName;
     public int desc;
     public int itemType;
     public string craftMaterial;
@@ -61,6 +62,7 @@ public class ItemTableEntity
     public int buyGold;
     public bool salePossible;
     public int saleGold;
+    public int invenMaxCount;
 }
 
 [Serializable]

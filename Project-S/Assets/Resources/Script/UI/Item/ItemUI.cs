@@ -1,20 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 
     
-public class ItemUI : MonoBehaviour
+public class ItemUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    public Image backImage;
     public Image itemImage;
     public TextMeshProUGUI itemCount;
 
+    [HideInInspector] public Transform parentAfterDrag;
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        itemImage.raycastTarget = false;
+        parentAfterDrag = transform.parent;
+        transform.SetParent(transform.root);
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        transform.position = Input.mousePosition;
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        itemImage.raycastTarget = true;
+        transform.SetParent(parentAfterDrag);
+    }
+
     public void SetItemUI(ItemType itemType, string itemImageName, int itemCountValue)
     {
-        backImage.gameObject.SetActive(true);
-
         switch (itemType)
         {
             case ItemType.None:

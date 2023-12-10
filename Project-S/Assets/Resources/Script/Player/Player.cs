@@ -24,4 +24,22 @@ public class Player : MonoBehaviour
         if(toolObj != Obj)
             toolObj = Instantiate(Obj, pivotTooltr);
     }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.transform.tag == "item")
+        {
+            ItemBase itemBase = hit.transform.GetComponent<ItemBase>();
+
+            InventoryItemData inventoryItemData = new()
+            {
+                itemIndex = itemBase.Itemindex,
+                itemCount = 1
+            };
+
+            InventoryManager.Instance.AddInventoryItemData(inventoryItemData);
+
+            Destroy(hit.gameObject);
+        }
+    }
 }

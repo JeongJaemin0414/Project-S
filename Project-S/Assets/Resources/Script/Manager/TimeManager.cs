@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-[System.Serializable]
+[Serializable]
 public class Timer
 {
     public int time; 
@@ -16,9 +16,19 @@ public class Timer
     }
 }
 
+
+[Serializable]
+public struct TimeData
+{
+    public SeasonType seasonType;
+    public int day;
+    public int time;
+}
+
+
 public class TimeManager : Singleton<TimeManager>
 {
-    private TimeData timeData;
+    private TimeData timeData = new();
     public TimeData TimeData { get => timeData; set => timeData = value; }
     
     public List<Timer> timers = new();

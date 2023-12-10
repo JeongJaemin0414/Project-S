@@ -46,7 +46,6 @@ public class Crops : MonoBehaviour
                 Vector3 randomPos = new(currentTomatoPlant.transform.position.x + Random.Range(-1f, 1f), currentTomatoPlant.transform.position.y + 0.5f, currentTomatoPlant.transform.position.z + Random.Range(-1f, 1f));
 
                 ItemManager.Instance.CreateItem(1020000, randomPos); //tomato
-                Instantiate(tomato, randomPos, Quaternion.identity);
             }
 
             Destroy(gameObject);

@@ -11,50 +11,41 @@ public struct CharacterData
     public int level;
 }
 
-[Serializable]
-public struct InventoryData
-{
-    public int inventorySize;
-}
-
-[Serializable]
-public struct TimeData
-{
-    public SeasonType seasonType;
-    public int day;
-    public int time;
-}
-   
 
 public class DataSaveLoad : MonoBehaviour
 {
-    private CharacterData characterData;
-    private InventoryData inventoryData;
 
-    public CharacterData CharacterData
+    public void InitSaveData()
     {
-        get { return characterData; }
-    }
+        SaveData saveData = new()
+        {
+            inventoryData = new(),
+            timeData = new()
+        };
 
-    public InventoryData InventoryData
-    {
-        get { return inventoryData; }
+        saveData.inventoryData.inventorySize = 24;
+        saveData.inventoryData.inventoryitemDatas = new InventoryItemData[saveData.inventoryData.inventorySize];
+
+        saveData.timeData.seasonType = SeasonType.spring;
+        saveData.timeData.day = 0;
+        saveData.timeData.time = 0;
+
+        JsonSystem.Save(saveData);
     }
 
     public void DataSave()
     {
-        characterData.name = "Hello";
-        characterData.age = 18;
-        characterData.level = 10;
-
-        inventoryData.inventorySize = 100;
+        //characterData.name = "Hello";
+        //characterData.age = 18;
+        //characterData.level = 10;
 
         SaveData saveData = new()
         {
-            characterData = characterData,
-            inventoryData = inventoryData,
+            //characterData = characterData,
+            inventoryData = InventoryManager.Instance.InventoryData,
             timeData = TimeManager.Instance.TimeData,
-    };
+
+        };
 
         JsonSystem.Save(saveData);
     }
@@ -63,8 +54,8 @@ public class DataSaveLoad : MonoBehaviour
     {
         SaveData loadData = JsonSystem.Load();
 
-        characterData = loadData.characterData;
-        inventoryData = loadData.inventoryData;
+        //characterData = loadData.characterData;
+        InventoryManager.Instance.InventoryData = loadData.inventoryData;
         TimeManager.Instance.TimeData = loadData.timeData;
     }
 }

@@ -8,52 +8,45 @@ using UnityEngine.UI;
 
 public class AddressbleManager : Singleton<AddressbleManager>
 {
-    private Dictionary<string, Object> _bundleObjs = new Dictionary<string, Object>();
+    private Dictionary<string, Object> _loadedAssets = new Dictionary<string, Object>();
 
     public override void Init()
     {
 
     }
 
-    public void LoadAssetAsync<T>(string assetName) where T : Object //에셋 로드
+    public T LoadAsset<T>(string assetName, Transform parentTrans = null) where T : Object
     {
-        _bundleObjs.TryGetValue(assetName, out Object obj);
+        T obj = null;
 
-        if (obj) // 로드가 완료된 에셋
+        if (_loadedAssets.TryGetValue(assetName, out Object loadedAsset) && loadedAsset)
         {
-            
+            obj = Instantiate(loadedAsset as T, parentTrans);
         }
-        else 
+        else
         {
-            Addressables.LoadAssetAsync<T>(assetName).Completed += handle =>
-            {
-                switch (handle.Status)
-                {
-                    case AsyncOperationStatus.Succeeded:
-                        {
-                            obj = handle.Result;
-                            _bundleObjs.Add(assetName, obj);
-                        }
-                        break;
-                    case AsyncOperationStatus.Failed:
+            AsyncOperationHandle<T> handle = Addressables.LoadAssetAsync<T>(assetName);
+            handle.WaitForCompletion();
 
-                        break;
-                }
-            };
-        }
-    }
-
-    public T InstantiateOrNull<T>(string key, Transform parentTrans = null) where T : Object // 로드된 에셋 생성
-    {
-        if (_bundleObjs.TryGetValue(key, out Object obj))
-        {
-            if(obj)
+            switch (handle.Status)
             {
-                return Instantiate((T)obj, parentTrans);
+                case AsyncOperationStatus.Succeeded:
+                    obj = Instantiate(handle.Result, parentTrans);
+                    _loadedAssets[assetName] = handle.Result;
+                    break;
+
+                case AsyncOperationStatus.Failed:
+                    Debug.LogError($"Failed to load asset: {assetName}");
+                    break;
             }
         }
 
-        return null;
+        if (obj == null)
+        {
+            Debug.LogWarning($"Failed to instantiate asset: {assetName}");
+        }
+
+        return obj;
     }
 
     public void SetSprite(Image image, string spriteName)
@@ -68,11 +61,9 @@ public class AddressbleManager : Singleton<AddressbleManager>
     {
         //LoadAssetAsync<Sprite>("Char/Skunk2");
         //LoadAssetAsync<Sprite>("Char/Wolf");
-
     }
 
     public void CreateBox()
     {
-        InstantiateOrNull<GameObject>("Box");
     }
 }

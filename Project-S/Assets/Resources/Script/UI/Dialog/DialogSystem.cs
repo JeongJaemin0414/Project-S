@@ -97,7 +97,7 @@ public class DialogSystem : UISystemBase
 
                     dialogUI.textName.text = _characterName;
                     dialogUI.objectArrow.SetActive(false);
-                    AddressbleManager.Instance.SetSprite(dialogUI.images[_illustIndex], "Char/" + _characterData.illustFileName);
+                    AddressbleManager.Instance.SetSprite(dialogUI.images[_illustIndex], "Sprite/Char/" + _characterData.illustFileName);
                     StartCoroutine("OnTypingText");
 
                     switch (dialogData[currentDialogIndex].illustAppear)

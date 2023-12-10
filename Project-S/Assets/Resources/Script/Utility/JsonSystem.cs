@@ -34,12 +34,11 @@ public static class JsonSystem
 
         if (!File.Exists(_filePath))
         {
-            Debug.LogError("No Such saveFile exists");
+            Debug.Log("No Such saveFile exists");
             
-            GameManager.Instance.DataSave();
-            Load();
+            GameManager.Instance.InitSaveData();
 
-            return null;
+            return Load();
         }
 
         string _saveFile = File.ReadAllText(_filePath);

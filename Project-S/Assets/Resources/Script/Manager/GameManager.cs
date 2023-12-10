@@ -11,12 +11,12 @@ public class GameManager : Singleton<GameManager>
     protected override void Awake()
     {
         dataSaveLoad = GetComponent<DataSaveLoad>();
-
-        DataLoad();
     }
 
     private void Start()
     {
+        DataLoad();
+
         Init();
     }
 
@@ -24,17 +24,23 @@ public class GameManager : Singleton<GameManager>
     {
         TimeManager.Instance.Init();
         AddressbleManager.Instance.Init();
-        CharacterManager.Instance.Init();
         DOTweenManager.Instance.Init();
-        ExcelManager.Instance.Init();  
         LanguageManager.Instance.Init();
-        UIManager.Instance.Init();
+        CharacterManager.Instance.Init();
+        InventoryManager.Instance.Init();
+        ExcelManager.Instance.Init();  
         FarmManager.Instance.Init();
+        UIManager.Instance.Init();
     }
 
     public void SetPlayerStop(bool isStop)
     {
         isPlayerStop = isStop;
+    }
+
+    public void InitSaveData()
+    {
+        dataSaveLoad.InitSaveData();
     }
 
     public void DataSave()
