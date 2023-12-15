@@ -3,10 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ground : State
+public class Pull : State
 {
     private Vector3 cropsPos;
-
     public override void Init(StateInfo newStateInfo)
     {
         stateInfo = newStateInfo;
@@ -18,12 +17,12 @@ public class Ground : State
 
         if (FarmManager.Instance.IsCreateCropsAble(cropsPos))
         {
-            LookTarget(cropsPos);
-            stateInfo.animController.PlayAnimCrossFade(GetType().Name, 0.3f);
+            stateInfo.onActionEnd?.Invoke();
         }
         else
         {
-            stateInfo.onActionEnd?.Invoke();
+            LookTarget(cropsPos);
+            stateInfo.animController.PlayAnimCrossFade(GetType().Name, 0.3f);
         }
     }
 
@@ -39,8 +38,8 @@ public class Ground : State
 
     public override void ExitState()
     {
-
     }
+
 
 
 }

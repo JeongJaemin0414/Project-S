@@ -6,19 +6,34 @@ using UnityEngine;
 public class Water : State
 {
     private Vector3 cropsPos;
+
+    public override void Init(StateInfo newStateInfo)
+    {
+        stateInfo = newStateInfo;
+    }
+
     public override void EnterState()
     {
         cropsPos = GetMousePointinDistance();
-        LookTarget(cropsPos);
+
+        if (FarmManager.Instance.IsCreateCropsAble(cropsPos))
+        {
+            stateInfo.onActionEnd?.Invoke();
+        }
+        else
+        {
+            LookTarget(cropsPos);
+            stateInfo.animController.PlayAnimCrossFade(GetType().Name, 0.3f);
+        }
     }
 
     public override void UpdateState()
     {
-        if (!stateData.anim.isPlaying)
+        if (!stateInfo.animController.anim.isPlaying)
         {
             FarmManager.Instance.OnCrops(cropsPos);
 
-            stateData.onActionEnd?.Invoke();
+            stateInfo.onActionEnd?.Invoke();
         }
     }
 

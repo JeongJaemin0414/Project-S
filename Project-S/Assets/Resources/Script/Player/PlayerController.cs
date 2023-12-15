@@ -138,17 +138,14 @@ public class PlayerController : MonoBehaviour
 
     public void EnterState()
     {
-        StateData stateData = new()
+        StateInfo stateInfo = new()
         {
-            anim = playerAnimController.anim,
-
+            animController = playerAnimController,
             onActionEnd = OnActionEnd
         };
 
-        currentState.Init(stateData);
+        currentState.Init(stateInfo);
         currentState.EnterState();
-
-        playerAnimController.PlayAnimCrossFade(currentState.GetType().Name, 0.3f);
     }
 
     public void ExitState()
@@ -175,26 +172,12 @@ public class PlayerController : MonoBehaviour
             {
                 case PlayerToolType.Idle:
 
-                    //playerinputs.isActioning = false;
-
-                    TransitionToState(gameObject.AddComponent<Ground>());
-
-                    //if (Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), transform.forward, out hit, maxDistance))
-                    //{
-                    //    Debug.Log("hit point : " + hit.point + ", distance : " + hit.distance + ", name : " + hit.collider.name);
-                    //    Debug.DrawRay(transform.position, transform.forward * hit.distance, Color.red);
-                        
-                    //    if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Crops"))
-                    //    {
-                    //        Debug.Log("Hit Crops !");
-                    //        hit.collider.gameObject.GetComponentInParent<Crops>().HarvestCrops();
-                    //    }
-                    //}
+                    TransitionToState(gameObject.AddComponent<Pull>());
 
                     break;
                 case PlayerToolType.Hoe:
 
-                    TransitionToState(gameObject.AddComponent<Fishing>());
+                    TransitionToState(gameObject.AddComponent<Dig>());
 
                     break;
                 case PlayerToolType.WaterCan:

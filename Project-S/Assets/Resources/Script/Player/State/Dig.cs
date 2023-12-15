@@ -3,10 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ground : State
+public class Dig : State
 {
     private Vector3 cropsPos;
-
     public override void Init(StateInfo newStateInfo)
     {
         stateInfo = newStateInfo;
@@ -31,7 +30,7 @@ public class Ground : State
     {
         if (!stateInfo.animController.anim.isPlaying)
         {
-            FarmManager.Instance.HarvestCrops(cropsPos);
+            FarmManager.Instance.CreateCrops(cropsPos);
 
             stateInfo.onActionEnd?.Invoke();
         }
@@ -39,8 +38,8 @@ public class Ground : State
 
     public override void ExitState()
     {
-
     }
+
 
 
 }

@@ -15,9 +15,9 @@ public class FarmManager : Singleton<FarmManager>
 {
     public Crops Crops;
 
-    public Dictionary<int, CropsData> cropsDatas = new ();
+    private Dictionary<int, CropsData> cropsDatas = new ();
 
-    public Dictionary<Vector3, Crops> cropsObjs = new ();
+    private Dictionary<Vector3, Crops> cropsObjs = new ();
 
     public override void Init()
     {
@@ -41,6 +41,15 @@ public class FarmManager : Singleton<FarmManager>
 
             cropsDatas.Add(cropsTableEntity.index, cropsData);
         }
+    }
+
+    public bool IsCreateCropsAble(Vector3 cropsPos)
+    {
+        float cropsPosX = Mathf.Round(cropsPos.x);
+        float cropsPosZ = Mathf.Round(cropsPos.z);
+        cropsPos = new Vector3(cropsPosX, 0, cropsPosZ);
+
+        return !cropsObjs.ContainsKey(cropsPos);
     }
 
     public void CreateCrops(Vector3 cropsPos)

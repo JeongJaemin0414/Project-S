@@ -4,19 +4,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public struct StateData
-{
-    public Animation anim;
+public struct StateInfo
+{ 
+    public PlayerAnimController animController;
     public Action onActionEnd;
 }
 
 public abstract class State : MonoBehaviour
 {
-    protected StateData stateData;
+    protected StateInfo stateInfo;
 
-    public void Init(StateData _stateData)
+    public virtual void Init(StateInfo newStateInfo)
     {
-        stateData = _stateData;
+        stateInfo = newStateInfo;
+
+        stateInfo.animController.PlayAnimCrossFade(GetType().Name, 0.3f);
     }
 
     public Vector3 GetMousePointinDistance()

@@ -8,6 +8,10 @@ public struct PlayerAnim
     public AnimationClip idle;
     public AnimationClip walk;
     public AnimationClip run;
+    public AnimationClip dig;
+    public AnimationClip gather;
+    public AnimationClip pull;
+    public AnimationClip seed;
     public AnimationClip fishingIdle;
     public AnimationClip fishing;
     public AnimationClip ground; 
@@ -31,6 +35,10 @@ public class PlayerAnimController : MonoBehaviour
             anim.AddClip(playerAnim.idle, playerAnim.idle.name);
             anim.AddClip(playerAnim.walk, playerAnim.walk.name);
             anim.AddClip(playerAnim.run, playerAnim.run.name);
+            anim.AddClip(playerAnim.dig, playerAnim.dig.name);
+            anim.AddClip(playerAnim.gather, playerAnim.gather.name);
+            anim.AddClip(playerAnim.pull, playerAnim.pull.name);
+            anim.AddClip(playerAnim.seed, playerAnim.seed.name);
             anim.AddClip(playerAnim.fishingIdle, playerAnim.fishingIdle.name);
             anim.AddClip(playerAnim.fishing, playerAnim.fishing.name);
             anim.AddClip(playerAnim.ground, playerAnim.ground.name);
