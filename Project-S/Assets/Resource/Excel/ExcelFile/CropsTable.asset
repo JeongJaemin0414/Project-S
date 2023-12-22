@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe9fa9e0382888b40b507fe1930f98ea, type: 3}
+  m_Name: CropsTable
+  m_EditorClassIdentifier: 
+  crops:
+  - index: 1001
+    name: 100001
+    growthDay: 2;4;6
+    fileName: Tomato1;Tomato2;Tomato3
+    growthSeason: 1;2;3
+    harvestItem: 1020000
+    harvestItemValue: 2;3
+    harvestItemPercent: 50;50
