@@ -47,6 +47,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tomato
       objectReference: {fileID: 0}
+    - target: {fileID: 6195007173571111648, guid: f0d3f2520e75aa147a7a2eb5a1594bfa, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 6823734772477702234, guid: f0d3f2520e75aa147a7a2eb5a1594bfa, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -103,7 +107,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 3.061
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5436723573819995924, guid: f0d3f2520e75aa147a7a2eb5a1594bfa, type: 3}
+    - {fileID: 4609241340093180549, guid: f0d3f2520e75aa147a7a2eb5a1594bfa, type: 3}
+    - {fileID: 2913152824090729079, guid: f0d3f2520e75aa147a7a2eb5a1594bfa, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f0d3f2520e75aa147a7a2eb5a1594bfa, type: 3}
 --- !u!4 &7926916821676379842 stripped
 Transform:
@@ -120,6 +127,10 @@ PrefabInstance:
     - target: {fileID: 6195007173571111648, guid: f0d3f2520e75aa147a7a2eb5a1594bfa, type: 3}
       propertyPath: m_Name
       value: Tomato (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195007173571111648, guid: f0d3f2520e75aa147a7a2eb5a1594bfa, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6823734772477702234, guid: f0d3f2520e75aa147a7a2eb5a1594bfa, type: 3}
       propertyPath: m_RootOrder
@@ -177,7 +188,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -25.77
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5436723573819995924, guid: f0d3f2520e75aa147a7a2eb5a1594bfa, type: 3}
+    - {fileID: 4609241340093180549, guid: f0d3f2520e75aa147a7a2eb5a1594bfa, type: 3}
+    - {fileID: 2913152824090729079, guid: f0d3f2520e75aa147a7a2eb5a1594bfa, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f0d3f2520e75aa147a7a2eb5a1594bfa, type: 3}
 --- !u!4 &7817555969356788904 stripped
 Transform:
@@ -194,6 +208,10 @@ PrefabInstance:
     - target: {fileID: 6195007173571111648, guid: f0d3f2520e75aa147a7a2eb5a1594bfa, type: 3}
       propertyPath: m_Name
       value: Tomato (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195007173571111648, guid: f0d3f2520e75aa147a7a2eb5a1594bfa, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6823734772477702234, guid: f0d3f2520e75aa147a7a2eb5a1594bfa, type: 3}
       propertyPath: m_RootOrder
@@ -251,7 +269,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -1.463
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5436723573819995924, guid: f0d3f2520e75aa147a7a2eb5a1594bfa, type: 3}
+    - {fileID: 4609241340093180549, guid: f0d3f2520e75aa147a7a2eb5a1594bfa, type: 3}
+    - {fileID: 2913152824090729079, guid: f0d3f2520e75aa147a7a2eb5a1594bfa, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f0d3f2520e75aa147a7a2eb5a1594bfa, type: 3}
 --- !u!4 &1030881373403897561 stripped
 Transform:
@@ -268,6 +289,10 @@ PrefabInstance:
     - target: {fileID: 6195007173571111648, guid: f0d3f2520e75aa147a7a2eb5a1594bfa, type: 3}
       propertyPath: m_Name
       value: Tomato (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6195007173571111648, guid: f0d3f2520e75aa147a7a2eb5a1594bfa, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6823734772477702234, guid: f0d3f2520e75aa147a7a2eb5a1594bfa, type: 3}
       propertyPath: m_RootOrder
@@ -325,7 +350,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 2.011
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5436723573819995924, guid: f0d3f2520e75aa147a7a2eb5a1594bfa, type: 3}
+    - {fileID: 4609241340093180549, guid: f0d3f2520e75aa147a7a2eb5a1594bfa, type: 3}
+    - {fileID: 2913152824090729079, guid: f0d3f2520e75aa147a7a2eb5a1594bfa, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f0d3f2520e75aa147a7a2eb5a1594bfa, type: 3}
 --- !u!4 &436716362758087577 stripped
 Transform:

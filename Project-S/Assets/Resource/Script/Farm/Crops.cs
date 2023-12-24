@@ -11,6 +11,8 @@ public class Crops : MonoBehaviour
 
     private GameObject currentCropsPlant;
 
+    public Material cropsWaterMaterial;
+
     public void SetCrops(CropsData newCropsData)
     {
         if (!isWatering)
@@ -18,7 +20,10 @@ public class Crops : MonoBehaviour
             cropsData = newCropsData;
             isWatering = true;
 
-            UpdateCrops();
+            gameObject.GetComponent<MeshRenderer>().material = cropsWaterMaterial;
+
+            int growthTime = Utilities.ConvertDayToTime(cropsData.growthDay[cropsCount]);
+            TimeManager.Instance.AddTimer(1, UpdateCrops);
 
             Debug.Log("Set Crops!");
         }
@@ -30,21 +35,24 @@ public class Crops : MonoBehaviour
 
     public void UpdateCrops()
     {
-        if(cropsCount > 2)  //max Count
+        string cropsFileName = cropsData.cropsFileName[cropsCount];
+
+        if (currentCropsPlant != null)
         {
-            string cropsFileName = cropsData.cropsFileName[cropsCount];
+            Destroy(currentCropsPlant);
+            currentCropsPlant = null;
+        }
+
+        currentCropsPlant = AddressbleManager.Instance.LoadAsset<GameObject>(cropsFileName, gameObject.transform);
+
+        cropsCount++;
+
+        if (cropsCount < 3)  //max Count
+        {
             int growthTime = Utilities.ConvertDayToTime(cropsData.growthDay[cropsCount]);
             SeasonType growthSeason = (SeasonType)cropsData.growthSeason[cropsCount];
-            cropsCount++;
 
-            if (currentCropsPlant != null)
-            {
-                Destroy(currentCropsPlant);
-                currentCropsPlant = null;
-            }
-
-            currentCropsPlant = AddressbleManager.Instance.LoadAsset<GameObject>(cropsFileName, gameObject.transform);
-            TimeManager.Instance.AddTimer(growthTime, UpdateCrops);
+            TimeManager.Instance.AddTimer(1, UpdateCrops);
 
             switch (cropsCount)
             {

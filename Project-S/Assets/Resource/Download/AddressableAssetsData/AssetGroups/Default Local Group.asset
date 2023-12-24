@@ -17,8 +17,16 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: e5f3a50b3b571c6439a037a84c7a67bf
   m_SerializeEntries:
-  - m_GUID: e0d4bcc7f669a724aad88e82f5cef158
-    m_Address: Sprite/Char/Cat2
+  - m_GUID: a66923119d261684e83ded0bc34193f3
+    m_Address: Tomato1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 147870f9bda7c1048a7f1eefc851e094
+    m_Address: Tomato2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f0d3f2520e75aa147a7a2eb5a1594bfa
+    m_Address: tomato_model
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 3bfb35c0c521ed14aa98f045c0bf8d12
@@ -27,6 +35,14 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: ae85e57cc13c05e48a8591b56043241e
     m_Address: InventoryItem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6f4e8c514d629a243be24f0ebf9618fe
+    m_Address: InventorySlot
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7a29d7ee912c0f94e9f50facefd6c217
+    m_Address: Tomato3
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
