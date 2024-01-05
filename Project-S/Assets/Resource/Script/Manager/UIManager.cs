@@ -45,15 +45,11 @@ public class UIManager : Singleton<UIManager>, IUIManager
     private DialogSystem dialogSystem;
 
     [SerializeField]
-    private InventorySystem inventorySystem;
-
-    [SerializeField]
     private TextMeshProUGUI timerText;
 
     public override void Init()
     {
         dialogSystem.Init();
-        inventorySystem.Init();
     }
 
     private void Update()
@@ -61,10 +57,6 @@ public class UIManager : Singleton<UIManager>, IUIManager
         if (Input.GetKeyDown(KeyCode.X))
         {
             OpenDialog(101);
-        }
-        else if (Input.GetKeyDown(KeyCode.Z))
-        {
-            OpenInventory();
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -129,23 +121,6 @@ public class UIManager : Singleton<UIManager>, IUIManager
         }
     }
 
-    public void OpenInventory()
-    {
-        if (!inventorySystem.IsOpening())
-        {
-            inventorySystem.OpenUISystem();
-        }
-        else
-        {
-            inventorySystem.CloseUISystem();
-        }
-    }
-    
-    public void RefreshInventory()
-    {
-        inventorySystem.RefreshInventory();
-    }
-    
     public void SetTimerText(string time)
     {
         timerText.text = time;

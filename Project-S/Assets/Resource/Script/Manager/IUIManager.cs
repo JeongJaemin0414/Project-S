@@ -15,7 +15,6 @@ public interface IUIManager
     T GetUI<T>() where T : UICanvas;
     void Init();
     void OpenDialog(int groupIndex);
-    void OpenInventory();
     void SetTimerText(string time);
     void ShortCut(bool forceClose = false);
     void Show(string canvasName, IUIData data, bool isSkipAni);

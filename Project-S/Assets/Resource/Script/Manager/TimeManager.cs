@@ -6,12 +6,12 @@ using System;
 [Serializable]
 public class Timer
 {
-    public int time; 
+    public float time; 
     public Action onTimerEnd;
     
-    public Timer(int _time, Action _onTimerEnd)
+    public Timer(float _time, Action _onTimerEnd)
     {
-        time = _time + TimeManager.Instance.TimeData.time;
+        time = _time + Time.time;
         onTimerEnd = _onTimerEnd;
     }
 }
@@ -43,7 +43,26 @@ public class TimeManager : Singleton<TimeManager>
         StartCoroutine(TimerCoroution());
     }
 
-    public void AddTimer(int _time, Action _onTimerEnd)
+    void Update()
+    {
+        Debug.Log("Time : " + Time.time);
+
+        if (timers.Count != 0)
+        {
+            for (int i = timers.Count - 1; i >= 0; i--)
+            {
+                Timer timer = timers[i];
+
+                if (timer.time <= Time.time) // Timer End
+                {
+                    timer.onTimerEnd?.Invoke();
+                    timers.Remove(timer);
+                }
+            }
+        }
+    }
+
+    public void AddTimer(float _time, Action _onTimerEnd)
     {
         Timer timer = new(_time, _onTimerEnd);
         timers.Add(timer);
@@ -52,7 +71,7 @@ public class TimeManager : Singleton<TimeManager>
     public void SetSeason()
     {
         TimeTableEntity timeTableEntity = ExcelManager.Instance.GetExcelData<TimeTable>().time[(int)timeData.seasonType];
-        timePass = timeTableEntity.timePass * 100;
+        timePass = timeTableEntity.timePass;
         maxDay = timeTableEntity.maxDay;
     }
 
@@ -78,19 +97,19 @@ public class TimeManager : Singleton<TimeManager>
         UIManager.Instance.SetTimerText(timeData.seasonType.ToString() + " " + day.ToString() + "ÀÏ " + hour.ToString("D2") + ":" + min.ToString("D2")); //+ ":" + (timeData.time % 60).ToString("D2")
         GameManager.Instance.DataSave();
 
-        if(timers.Count != 0)
-        {
-            for(int i = timers.Count - 1; i >= 0; i--)
-            {
-                Timer timer = timers[i];
+        //if(timers.Count != 0)
+        //{
+        //    for(int i = timers.Count - 1; i >= 0; i--)
+        //    {
+        //        Timer timer = timers[i];
 
-                if (timer.time <= timeData.time) //timer End
-                {
-                    timer.onTimerEnd?.Invoke();
-                    timers.Remove(timer);
-                }
-            }
-        }
+        //        if (timer.time <= timeData.time) //timer End
+        //        {
+        //            timer.onTimerEnd?.Invoke();
+        //            timers.Remove(timer);
+        //        }
+        //    }
+        //}
 
         yield return new WaitForSeconds(1f);
 

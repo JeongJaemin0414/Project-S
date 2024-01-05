@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
-public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class InventoryItem : MonoBehaviour
 {
     private InventoryItemData inventoryItemData;
     public InventoryItemData InventoryItemData { get => inventoryItemData; }
@@ -16,28 +16,24 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     [HideInInspector] public Transform parentAfterDrag;
 
-    public Action<int, int, InventoryItemData> OnEndDragAction;
-    public void OnBeginDrag(PointerEventData eventData)
+    public void OnBeginDrag(Transform parent = null)
     {
         itemImage.raycastTarget = false;
-        parentAfterDrag = transform.parent;
+        parentAfterDrag = (parent == null) ? transform.parent : parent;
         transform.SetParent(transform.root);
     }
 
-    public void OnDrag(PointerEventData eventData)
-    {
-        transform.position = Input.mousePosition;
-    }
-
-    public void OnEndDrag(PointerEventData eventData)
+    public void OnEndDrag()
     {
         itemImage.raycastTarget = true;
         transform.SetParent(parentAfterDrag);
     }
 
-    public void SetItemUI(InventoryItemData newInventoryItemData, ItemData newitemData)
+    public void SetItemUI(InventoryItemData newInventoryItemData)
     {
         inventoryItemData = newInventoryItemData;
+
+        ItemData newitemData = ItemManager.Instance.GetItemData(inventoryItemData.itemIndex);
 
         string itemResourceName = newitemData.iconResourceName;
         int itemCountValue = inventoryItemData.itemCount;
@@ -53,4 +49,6 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         else
             itemCount.gameObject.SetActive(false);
     }
+
+
 }
