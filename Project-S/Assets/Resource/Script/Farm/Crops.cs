@@ -23,7 +23,7 @@ public class Crops : MonoBehaviour
             gameObject.GetComponent<MeshRenderer>().material = cropsWaterMaterial;
 
             int growthTime = Utilities.ConvertDayToTime(cropsData.growthDay[cropsCount]);
-            //TimeManager.Instance.AddTimer(1, UpdateCrops);
+            TimeManager.Instance.AddTimer(1, UpdateCrops);
 
             Debug.Log("Set Crops!");
         }
@@ -52,7 +52,7 @@ public class Crops : MonoBehaviour
             int growthTime = Utilities.ConvertDayToTime(cropsData.growthDay[cropsCount]);
             SeasonType growthSeason = (SeasonType)cropsData.growthSeason[cropsCount];
 
-            //TimeManager.Instance.AddTimer(1, UpdateCrops);
+            TimeManager.Instance.AddTimer(1, UpdateCrops);
 
             switch (cropsCount)
             {
