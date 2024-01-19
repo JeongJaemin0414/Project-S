@@ -6338,22 +6338,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2047589036490776829, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-      propertyPath: playerAnim.dig
-      value: 
-      objectReference: {fileID: 7400000, guid: 4e80fd58181c3214c9c1c8d548bf58cd, type: 2}
-    - target: {fileID: 2047589036490776829, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-      propertyPath: playerAnim.pull
-      value: 
-      objectReference: {fileID: 7400000, guid: b2ceaa9a2185a6149a5714f28c176bf6, type: 2}
-    - target: {fileID: 2047589036490776829, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-      propertyPath: playerAnim.seed
-      value: 
-      objectReference: {fileID: 7400000, guid: f6755422ab3513a4cbe70b99af0431cd, type: 2}
-    - target: {fileID: 2047589036490776829, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-      propertyPath: playerAnim.gather
-      value: 
-      objectReference: {fileID: 7400000, guid: 2472c9b3bcd7a734cb39ff69f3cf0cdf, type: 2}
     - target: {fileID: 3893294197879345259, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: m_RootOrder
       value: 7

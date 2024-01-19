@@ -1130,7 +1130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerAnim:
     idle: {fileID: 7400000, guid: 8d60ef83f9bb7dd41821d60f1f10d383, type: 2}
-    walk: {fileID: 7400000, guid: 2c192b12828640e42b3dd6653c295cb9, type: 2}
+    walk: {fileID: 7400000, guid: e9f151c7ec9328e4b89e6f3d9a34f7ce, type: 2}
     run: {fileID: 7400000, guid: cd28b8a8e5cb90e40a7f6b2a1d806b79, type: 2}
     dig: {fileID: 7400000, guid: 4e80fd58181c3214c9c1c8d548bf58cd, type: 2}
     gather: {fileID: 7400000, guid: 2472c9b3bcd7a734cb39ff69f3cf0cdf, type: 2}
