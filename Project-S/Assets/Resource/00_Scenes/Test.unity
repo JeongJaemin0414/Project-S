@@ -6338,6 +6338,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2047589036490776829, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: playerAnim.idle
+      value: 
+      objectReference: {fileID: 7400000, guid: 140c5ce9f52c3c24791c9e7f4b0b4fa2, type: 2}
+    - target: {fileID: 2047589036490776829, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: playerAnim.walk
+      value: 
+      objectReference: {fileID: 7400000, guid: a78c6ab0f47ae4a468a0ceb0ebd9d153, type: 2}
     - target: {fileID: 3893294197879345259, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: m_RootOrder
       value: 7
