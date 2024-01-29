@@ -47,7 +47,7 @@ public class FarmManager : Singleton<FarmManager>
     {
         float cropsPosX = Mathf.Round(cropsPos.x);
         float cropsPosZ = Mathf.Round(cropsPos.z);
-        cropsPos = new Vector3(cropsPosX, 0f, cropsPosZ);
+        cropsPos = new Vector3(cropsPosX, 0.3f, cropsPosZ);
 
         return !cropsObjs.ContainsKey(cropsPos);
     }
@@ -56,7 +56,7 @@ public class FarmManager : Singleton<FarmManager>
     {
         float cropsPosX = Mathf.Round(cropsPos.x);
         float cropsPosZ = Mathf.Round(cropsPos.z);
-        cropsPos = new Vector3(cropsPosX, 0f, cropsPosZ);
+        cropsPos = new Vector3(cropsPosX, 0.3f, cropsPosZ);
 
         Debug.Log("< Create > CropsPos : " + cropsPos);
 
@@ -75,7 +75,7 @@ public class FarmManager : Singleton<FarmManager>
     {
         float cropsPosX = Mathf.Round(cropsPos.x);
         float cropsPosZ = Mathf.Round(cropsPos.z);
-        cropsPos = new Vector3(cropsPosX, 0f, cropsPosZ);
+        cropsPos = new Vector3(cropsPosX, 0.3f, cropsPosZ);
 
         Debug.Log("< Set > CropsPos : " + cropsPos);
 
@@ -101,7 +101,7 @@ public class FarmManager : Singleton<FarmManager>
     {
         float cropsPosX = Mathf.Round(cropsPos.x);
         float cropsPosZ = Mathf.Round(cropsPos.z);
-        cropsPos = new Vector3(cropsPosX, 0f, cropsPosZ);
+        cropsPos = new Vector3(cropsPosX, 0.3f, cropsPosZ);
 
         Debug.Log("< Harvest > CropsPos : " + cropsPos);
 
