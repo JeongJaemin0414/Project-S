@@ -45,6 +45,14 @@ MonoBehaviour:
     m_Address: Tomato3
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: d49fcdc1b91b7ff4ab2ac7a88f10b553
+    m_Address: 06_Sprite/Char/Skunk3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e0d4bcc7f669a724aad88e82f5cef158
+    m_Address: Assets/Resource/06_Sprite/Char/Cat2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 6a220012687e1df41a5486f8eb8ba4a4, type: 2}
   m_SchemaSet:

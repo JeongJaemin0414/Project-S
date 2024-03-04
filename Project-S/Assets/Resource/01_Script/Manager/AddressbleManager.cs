@@ -49,11 +49,12 @@ public class AddressbleManager : Singleton<AddressbleManager>
         return obj;
     }
 
-    public void SetSprite(Image image, string spriteName)
+    public void SetSprite(Image image, string spriteName, System.Action onCompleted = null)
     {
         Addressables.LoadAssetAsync<Sprite>(spriteName).Completed += handle =>
         {
             image.sprite = handle.Result;
+            onCompleted?.Invoke();
         };
     }
 

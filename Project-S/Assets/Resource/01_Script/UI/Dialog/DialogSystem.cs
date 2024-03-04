@@ -95,20 +95,22 @@ public class DialogSystem : UISystemBase
                     int _illustIndex = (int)dialogData[currentDialogIndex].illustLocation;
                     string _characterName = _characterData.Name;
 
-                    dialogUI.textName.text = _characterName;
-                    dialogUI.objectArrow.SetActive(false);
-                    AddressbleManager.Instance.SetSprite(dialogUI.images[_illustIndex], "Sprite/Char/" + _characterData.illustFileName);
-                    StartCoroutine("OnTypingText");
-
-                    switch (dialogData[currentDialogIndex].illustAppear)
+                    AddressbleManager.Instance.SetSprite(dialogUI.images[_illustIndex], _characterData.illustFileName, () =>
                     {
-                        case IllustAppear.FadeIn:
-                            DOTweenManager.Instance.FadeIn(dialogUI.images[_illustIndex]);
-                            break;
-                        case IllustAppear.FadeOut:
-                            DOTweenManager.Instance.FadeOut(dialogUI.images[_illustIndex]);            
-                            break;
-                    }
+                        dialogUI.textName.text = _characterName;
+                        dialogUI.objectArrow.SetActive(false);
+                        StartCoroutine("OnTypingText");
+
+                        switch (dialogData[currentDialogIndex].illustAppear)
+                        {
+                            case IllustAppear.FadeIn:
+                                DOTweenManager.Instance.FadeIn(dialogUI.images[_illustIndex]);
+                                break;
+                            case IllustAppear.FadeOut:
+                                DOTweenManager.Instance.FadeOut(dialogUI.images[_illustIndex]);
+                                break;
+                        }
+                    });
                 }
                 else
                 {
