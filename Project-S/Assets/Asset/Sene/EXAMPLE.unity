@@ -2268,9 +2268,9 @@ MonoBehaviour:
     - Key: 0
       Value: {fileID: 0}
     - Key: 2
-      Value: {fileID: 7048498844631112960, guid: bffa157e95acc1443bf9182f3ba5a28a, type: 3}
+      Value: {fileID: 4870902698799411280, guid: 3dccba185ab25e8438f478a32fe6419b, type: 3}
     - Key: 5
-      Value: {fileID: 3928642541961935006, guid: 8877f4aac7d3c184ea4954647487e084, type: 3}
+      Value: {fileID: 1006372964029131856, guid: 502cd4b19e952be4a92ac0e0e6ab7e8c, type: 3}
 --- !u!1 &350210371
 GameObject:
   m_ObjectHideFlags: 0
