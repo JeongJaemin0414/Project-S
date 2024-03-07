@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1238c54a26343c24f8c59d23a306f31a, type: 2}
+  - {fileID: 2100000, guid: 2f4eff8b0a0642e48bf1f576cc84acfe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -111,4 +111,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2013249490a5484ead701c2f6a97fc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cropsWaterMaterial: {fileID: 2100000, guid: 2f4eff8b0a0642e48bf1f576cc84acfe, type: 2}
+  cropsWaterMaterial: {fileID: 2100000, guid: 1238c54a26343c24f8c59d23a306f31a, type: 2}
