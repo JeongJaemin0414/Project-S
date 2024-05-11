@@ -507,6 +507,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2047589036490776829, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: playerAnim.dig
+      value: 
+      objectReference: {fileID: 7400000, guid: d26349594033f8245bd2649dbcdb2660, type: 2}
+    - target: {fileID: 2047589036490776829, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: playerAnim.pull
+      value: 
+      objectReference: {fileID: 7400000, guid: 681c2dd4f7667b6499c8bc299e09d932, type: 2}
+    - target: {fileID: 2047589036490776829, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: playerAnim.seed
+      value: 
+      objectReference: {fileID: 7400000, guid: e42b15d848f925549b8941f8f7ab0e4a, type: 2}
+    - target: {fileID: 2047589036490776829, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: playerAnim.water
+      value: 
+      objectReference: {fileID: 7400000, guid: 82a5ec4eb34877e4b919a92680706d7d, type: 2}
+    - target: {fileID: 2047589036490776829, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: playerAnim.gather
+      value: 
+      objectReference: {fileID: 7400000, guid: 2ac6f55a7ed46fc46abce210adec5e6d, type: 2}
     - target: {fileID: 3893294197879345259, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: m_RootOrder
       value: 6
