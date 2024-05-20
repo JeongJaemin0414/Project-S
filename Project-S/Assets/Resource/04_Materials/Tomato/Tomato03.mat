@@ -8,17 +8,14 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Tomato03
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ValidKeywords:
-  - _NORMALMAP
-  - _OCCLUSIONMAP
+  m_Shader: {fileID: -6465566751694194690, guid: 4bb837bca7fedb740ae5a305b43c42d8, type: 3}
+  m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap:
-    RenderType: Opaque
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -51,8 +48,16 @@ Material:
         m_Texture: {fileID: 2800000, guid: d9e26a9c6a8e73f43bb0e6bdba2b4177, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Main_Texture:
+        m_Texture: {fileID: 2800000, guid: d9e26a9c6a8e73f43bb0e6bdba2b4177, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal_tex:
+        m_Texture: {fileID: 2800000, guid: 9adb612e51a6a2b41b435ba9faa3b7df, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -96,18 +101,23 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
+    - _Fresnel_Power_1: 1
+    - _Fresnel_Power_2: 0.328
     - _GlossMapScale: 1
     - _Glossiness: 0.171
     - _GlossyReflections: 1
     - _Lumin: 0
     - _MaxLight: 1
-    - _Metallic: 0
+    - _Metallic: 0.069
     - _MinLight: 0
     - _Mode: 0
+    - _Normal: 100
+    - _Normal_1: 0
     - _OcclusionStrength: 1
     - _Offset: 0
     - _OtlWidth: 1
     - _Parallax: 0.02
+    - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Segmented: 1
@@ -115,7 +125,7 @@ Material:
     - _ShnOverlap: 0
     - _ShnRange: 0.15
     - _ShnSmooth: 0
-    - _Smoothness: 0.5
+    - _Smoothness: 0.147
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -129,6 +139,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Main_Color: {r: 0, g: 0.6320754, b: 0.06995004, a: 1}
     - _OtlColor: {r: 0, g: 0, b: 0, a: 1}
     - _ShnColor: {r: 1, g: 1, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
