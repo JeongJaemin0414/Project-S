@@ -24,6 +24,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: d9e26a9c6a8e73f43bb0e6bdba2b4177, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Base_Tex:
+        m_Texture: {fileID: 2800000, guid: d9e26a9c6a8e73f43bb0e6bdba2b4177, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 2800000, guid: 9adb612e51a6a2b41b435ba9faa3b7df, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -54,6 +58,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal_Tex:
+        m_Texture: {fileID: 2800000, guid: 9adb612e51a6a2b41b435ba9faa3b7df, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal_tex:
@@ -88,6 +96,7 @@ Material:
     m_Floats:
     - _AlphaClip: 0
     - _AmbientCol: 0
+    - _Ambient_Light_Strength: 0.328
     - _Blend: 0
     - _BumpScale: 1
     - _ClearCoatMask: 0
@@ -101,6 +110,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
+    - _Fresnel_Power: 2.1
     - _Fresnel_Power_1: 1
     - _Fresnel_Power_2: 0.328
     - _GlossMapScale: 1
@@ -113,6 +123,7 @@ Material:
     - _Mode: 0
     - _Normal: 100
     - _Normal_1: 0
+    - _Normal_Strength: 2.36
     - _OcclusionStrength: 1
     - _Offset: 0
     - _OtlWidth: 1
@@ -125,7 +136,7 @@ Material:
     - _ShnOverlap: 0
     - _ShnRange: 0.15
     - _ShnSmooth: 0
-    - _Smoothness: 0.147
+    - _Smoothness: 0.181
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -137,8 +148,11 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Base_Color: {r: 0.0713112, g: 0.6320754, b: 0.068574235, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Cutoff_Thresholds: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Fersnel_Color: {r: 0.2641614, g: 0.49056602, b: 0.25685295, a: 0}
     - _Main_Color: {r: 0, g: 0.6320754, b: 0.06995004, a: 1}
     - _OtlColor: {r: 0, g: 0, b: 0, a: 1}
     - _ShnColor: {r: 1, g: 1, b: 0, a: 1}
