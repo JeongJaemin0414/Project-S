@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset />
+  <library_images>
+    <image id="mPltTreeOakLeafColor_Grd">
+      <init_from>mPltTreeOakLeafColor_Grd.png</init_from>
+    </image>
+    <image id="mPltTreeOakTrunkColor_Grd">
+      <init_from>mPltTreeOakTrunkColor_Grd.png</init_from>
+    </image>
+    <image id="mPltTreeOakTrunk_AlbGry">
+      <init_from>mPltTreeOakTrunk_AlbGry.png</init_from>
+    </image>
+    <image id="mPltTreeOakTrunk_Mix">
+      <init_from>mPltTreeOakTrunk_Mix.png</init_from>
+    </image>
+    <image id="mPltTreeOakTrunk_Nrm">
+      <init_from>mPltTreeOakTrunk_Nrm.png</init_from>
+    </image>
+    <image id="mTreeOakLeafBack_AlbGry">
+      <init_from>mTreeOakLeafBack_AlbGry.png</init_from>
+    </image>
+    <image id="mTreeOakLeafBack_Mix">
+      <init_from>mTreeOakLeafBack_Mix.png</init_from>
+    </image>
+    <image id="mTreeOakLeafBack_Nrm">
+      <init_from>mTreeOakLeafBack_Nrm.png</init_from>
+    </image>
+    <image id="mTreeOakLeafBack_OP">
+      <init_from>mTreeOakLeafBack_OP.png</init_from>
+    </image>
+    <image id="mTreeOakLeaf_AlbGry">
+      <init_from>mTreeOakLeaf_AlbGry.png</init_from>
+    </image>
+    <image id="mTreeOakLeaf_Mix">
+      <init_from>mTreeOakLeaf_Mix.png</init_from>
+    </image>
+    <image id="mTreeOakLeaf_Nrm">
+      <init_from>mTreeOakLeaf_Nrm.png</init_from>
+    </image>
+    <image id="mTreeOakLeaf_OP">
+      <init_from>mTreeOakLeaf_OP.png</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="mPltTreeOakTrunk">
+      <instance_effect url="#Effect_mPltTreeOakTrunk" />
+    </material>
+    <material id="mTreeOakLeaf">
+      <instance_effect url="#Effect_mTreeOakLeaf" />
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="Effect_mPltTreeOakTrunk">
+      <profile_COMMON>
+        <newparam sid="surface_mPltTreeOakTrunk-bump">
+          <surface type="2D">
+            <init_from>mPltTreeOakTrunk_Nrm</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="sampler_mPltTreeOakTrunk-bump">
+          <sampler2D>
+            <source>surface_mPltTreeOakTrunk-bump</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+          </sampler2D>
+        </newparam>
+        <newparam sid="surface_mPltTreeOakTrunk-diffuse">
+          <surface type="2D">
+            <init_from>mPltTreeOakTrunk_AlbGry</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="sampler_mPltTreeOakTrunk-diffuse">
+          <sampler2D>
+            <source>surface_mPltTreeOakTrunk-diffuse</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+          </sampler2D>
+        </newparam>
+        <newparam sid="surface_mPltTreeOakTrunk-specular">
+          <surface type="2D">
+            <init_from>mPltTreeOakTrunk_Mix</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="sampler_mPltTreeOakTrunk-specular">
+          <sampler2D>
+            <source>surface_mPltTreeOakTrunk-specular</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <bump>
+              <texture texture="sampler_mPltTreeOakTrunk-bump" texcoord="CHANNEL0" />
+            </bump>
+            <diffuse>
+              <texture texture="sampler_mPltTreeOakTrunk-diffuse" texcoord="CHANNEL0" />
+            </diffuse>
+            <specular>
+              <texture texture="sampler_mPltTreeOakTrunk-specular" texcoord="CHANNEL0" />
+            </specular>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="Effect_mTreeOakLeaf">
+      <profile_COMMON>
+        <newparam sid="surface_mTreeOakLeaf-bump">
+          <surface type="2D">
+            <init_from>mTreeOakLeaf_Nrm</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="sampler_mTreeOakLeaf-bump">
+          <sampler2D>
+            <source>surface_mTreeOakLeaf-bump</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+          </sampler2D>
+        </newparam>
+        <newparam sid="surface_mTreeOakLeaf-specular">
+          <surface type="2D">
+            <init_from>mTreeOakLeaf_Mix</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="sampler_mTreeOakLeaf-specular">
+          <sampler2D>
+            <source>surface_mTreeOakLeaf-specular</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+          </sampler2D>
+        </newparam>
+        <newparam sid="surface_mTreeOakLeaf-diffuse">
+          <surface type="2D">
+            <init_from>mTreeOakLeaf_AlbGry</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="sampler_mTreeOakLeaf-diffuse">
+          <sampler2D>
+            <source>surface_mTreeOakLeaf-diffuse</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <bump>
+              <texture texture="sampler_mTreeOakLeaf-bump" texcoord="CHANNEL0" />
+            </bump>
+            <specular>
+              <texture texture="sampler_mTreeOakLeaf-specular" texcoord="CHANNEL0" />
+            </specular>
+            <diffuse>
+              <texture texture="sampler_mTreeOakLeaf-diffuse" texcoord="CHANNEL0" />
+            </diffuse>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="L01_Rich1__mTreeOakLeaf-mesh" name="L01_Rich1__mTreeOakLeaf">
+      <mesh>
+        <source id="L01_Rich1__mTreeOakLeaf-position">
+          <float_array id="L01_Rich1__mTreeOakLeaf-position-array" count="90">-1.5498 4.068891 0.1484365 -1.88219 3.900696 0.9700869 -1.144796 3.388743 1.039357 -2.76826 4.083571 0.8071358 -0.6966598 3.473813 0.3281026 -2.959519 4.44882 -0.2335701 -1.356475 3.943154 -0.73444 -0.3804234 3.267295 -0.4644159 -3.224761 4.534261 -1.333451 -0.1483365 3.656497 -1.217371 -2.328216 4.658389 -2.013335 -0.9626195 4.260879 -1.493491 -0.04815027 3.754111 -2.05159 -1.505654 4.502709 -2.752394 -0.6938038 4.289259 -2.352992 0.9694961 4.343462 -1.475275 0.732754 4.388971 -2.344622 0.1039734 3.798333 -2.08689 1.535561 4.663867 -2.698245 0.1814456 3.67683 -1.254316 2.321707 4.843191 -1.921795 1.352991 4.021223 -0.7125498 0.412185 3.275918 -0.5081454 3.201754 4.750387 -1.211657 0.6873596 3.47279 0.3029057 2.90443 4.607455 -0.128785 1.5033 4.123977 0.1813621 1.115802 3.390253 1.027553 2.701008 4.192394 0.8877764 1.813115 3.944758 1.008226</float_array>
+          <technique_common>
+            <accessor source="#L01_Rich1__mTreeOakLeaf-position-array" count="30" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="L01_Rich1__mTreeOakLeaf-normal">
+          <float_array id="L01_Rich1__mTreeOakLeaf-normal-array" count="90">0.3659491 0.9217221 0.1350294 0.2915851 0.9001957 0.3248532 0.3894325 0.8864971 0.2504892 0.3894325 0.8864971 0.2504892 0.5479452 0.8219178 0.1526419 0.2622309 0.962818 0.05283757 0.3268102 0.9178082 0.223092 0.3894325 0.8864971 0.2504892 0.3894325 0.8864971 0.2504892 0.4598826 0.7945206 0.3992172 0.1663405 0.9315069 0.3209393 0.3013699 0.9001957 0.3170255 0.3894325 0.8864971 0.2504892 0.3894325 0.8864971 0.2504892 0.3639922 0.9236791 0.1232877 -0.369863 0.8649706 0.3365949 -0.4266145 0.8943248 0.1409002 -0.4598826 0.851272 0.2524462 -0.4598826 0.851272 0.2524462 -0.5244619 0.7475538 0.407045 -0.2367906 0.9060665 0.3483366 -0.3933464 0.8864971 0.2446184 -0.4598826 0.851272 0.2524462 -0.4598826 0.851272 0.2524462 -0.6046967 0.7808219 0.1585127 -0.3248532 0.9432485 0.07827789 -0.4285714 0.890411 0.1526419 -0.4598826 0.851272 0.2524462 -0.4598826 0.851272 0.2524462 -0.3600783 0.8669276 0.3444227</float_array>
+          <technique_common>
+            <accessor source="#L01_Rich1__mTreeOakLeaf-normal-array" count="30" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="L01_Rich1__mTreeOakLeaf-color">
+          <float_array id="L01_Rich1__mTreeOakLeaf-color-array" count="120">-0.3999023 3.298828 -0.5 1 -0.3999023 3.298828 -0.5 1 -0.3999023 3.298828 -0.5 1 -0.3999023 3.298828 -0.5 1 -0.3999023 3.298828 -0.5 1 -0.3999023 3.298828 -0.5 1 -0.3999023 3.298828 -0.5 1 -0.3999023 3.298828 -0.5 1 -0.3999023 3.298828 -0.5 1 -0.3999023 3.298828 -0.5 1 -0.3999023 3.298828 -0.5 1 -0.3999023 3.298828 -0.5 1 -0.3999023 3.298828 -0.5 1 -0.3999023 3.298828 -0.5 1 -0.3999023 3.298828 -0.5 1 0.3999023 3.298828 -0.5 1 0.3999023 3.298828 -0.5 1 0.3999023 3.298828 -0.5 1 0.3999023 3.298828 -0.5 1 0.3999023 3.298828 -0.5 1 0.3999023 3.298828 -0.5 1 0.3999023 3.298828 -0.5 1 0.3999023 3.298828 -0.5 1 0.3999023 3.298828 -0.5 1 0.3999023 3.298828 -0.5 1 0.3999023 3.298828 -0.5 1 0.3999023 3.298828 -0.5 1 0.3999023 3.298828 -0.5 1 0.3999023 3.298828 -0.5 1 0.3999023 3.298828 -0.5 1</float_array>
+          <technique_common>
+            <accessor source="#L01_Rich1__mTreeOakLeaf-color-array" count="30" stride="4">
+              <param name="R" type="float" />
+              <param name="G" type="float" />
+              <param name="B" type="float" />
+              <param name="A" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="L01_Rich1__mTreeOakLeaf-texcoord">
+          <float_array id="L01_Rich1__mTreeOakLeaf-texcoord-array" count="60">0.2437018 0.8778363 0.3184863 0.8778363 0.3080034 0.957702 0.3288014 0.7991912 0.239353 0.9726253 0.2497597 0.7459678 0.1707179 0.8778363 0.1707179 0.9875486 0.1707179 0.6927291 0.1020829 0.9721981 0.09167621 0.7454948 0.09774929 0.8778363 0.03343252 0.9568627 0.01263447 0.7982605 0.02307164 0.8778363 0.2437018 0.8778363 0.3184863 0.8778363 0.3080034 0.957702 0.3288014 0.7991912 0.239353 0.9726253 0.2497597 0.7459678 0.1707179 0.8778363 0.1707179 0.9875486 0.1707179 0.6927291 0.1020829 0.9721981 0.09167621 0.7454948 0.09774929 0.8778363 0.03343252 0.9568627 0.01263447 0.7982605 0.02307164 0.8778363</float_array>
+          <technique_common>
+            <accessor source="#L01_Rich1__mTreeOakLeaf-texcoord-array" count="30" stride="2">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="L01_Rich1__mTreeOakLeaf-texcoord_1">
+          <float_array id="L01_Rich1__mTreeOakLeaf-texcoord-array_1" count="60">0.03448539 0.04879832 0.04518196 0.04869151 0.04451057 0.07098496 0.0458381 0.02673382 0.03421073 0.0735485 0.03486687 0.01435876 0.02389563 0.04853892 0.02389563 0.07612723 0.02389563 0.001998961 0.01359579 0.0735485 0.01293965 0.01435876 0.01332113 0.04892045 0.003295949 0.07098496 0.001968414 0.02673382 0.002624552 0.04893571 0.03448539 0.04879832 0.04518196 0.04869151 0.04451057 0.07098496 0.0458381 0.02673382 0.03421073 0.0735485 0.03486687 0.01435876 0.02389563 0.04853892 0.02389563 0.07612723 0.02389563 0.001998961 0.01359579 0.0735485 0.01293965 0.01435876 0.01332113 0.04892045 0.003295949 0.07098496 0.001968414 0.02673382 0.002624552 0.04893571</float_array>
+          <technique_common>
+            <accessor source="#L01_Rich1__mTreeOakLeaf-texcoord-array_1" count="30" stride="2">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="L01_Rich1__mTreeOakLeaf-vertex">
+          <input semantic="POSITION" source="#L01_Rich1__mTreeOakLeaf-position" />
+        </vertices>
+        <triangles material="mTreeOakLeaf" count="32">
+          <input semantic="VERTEX" source="#L01_Rich1__mTreeOakLeaf-vertex" offset="0" />
+          <input semantic="NORMAL" source="#L01_Rich1__mTreeOakLeaf-normal" offset="1" />
+          <input semantic="COLOR" source="#L01_Rich1__mTreeOakLeaf-color" offset="2" set="0" />
+          <input semantic="TEXCOORD" source="#L01_Rich1__mTreeOakLeaf-texcoord" offset="3" set="0" />
+          <input semantic="TEXCOORD" source="#L01_Rich1__mTreeOakLeaf-texcoord_1" offset="4" set="1" />
+          <p>0 0 0 0 0 1 1 1 1 1 2 2 2 2 2 1 1 1 1 1 0 0 0 0 0 3 3 3 3 3 4 4 4 4 4 0 0 0 0 0 2 2 2 2 2 0 0 0 0 0 5 5 5 5 5 3 3 3 3 3 0 0 0 0 0 4 4 4 4 4 6 6 6 6 6 0 0 0 0 0 6 6 6 6 6 5 5 5 5 5 4 4 4 4 4 7 7 7 7 7 6 6 6 6 6 6 6 6 6 6 8 8 8 8 8 5 5 5 5 5 6 6 6 6 6 7 7 7 7 7 9 9 9 9 9 8 8 8 8 8 6 6 6 6 6 10 10 10 10 10 11 11 11 11 11 6 6 6 6 6 9 9 9 9 9 6 6 6 6 6 11 11 11 11 11 10 10 10 10 10 11 11 11 11 11 9 9 9 9 9 12 12 12 12 12 10 10 10 10 10 11 11 11 11 11 13 13 13 13 13 14 14 14 14 14 11 11 11 11 11 12 12 12 12 12 11 11 11 11 11 14 14 14 14 14 13 13 13 13 13 15 15 15 15 15 16 16 16 16 16 17 17 17 17 17 16 16 16 16 16 15 15 15 15 15 18 18 18 18 18 19 19 19 19 19 15 15 15 15 15 17 17 17 17 17 15 15 15 15 15 20 20 20 20 20 18 18 18 18 18 15 15 15 15 15 19 19 19 19 19 21 21 21 21 21 15 15 15 15 15 21 21 21 21 21 20 20 20 20 20 19 19 19 19 19 22 22 22 22 22 21 21 21 21 21 21 21 21 21 21 23 23 23 23 23 20 20 20 20 20 21 21 21 21 21 22 22 22 22 22 24 24 24 24 24 23 23 23 23 23 21 21 21 21 21 25 25 25 25 25 26 26 26 26 26 21 21 21 21 21 24 24 24 24 24 21 21 21 21 21 26 26 26 26 26 25 25 25 25 25 26 26 26 26 26 24 24 24 24 24 27 27 27 27 27 25 25 25 25 25 26 26 26 26 26 28 28 28 28 28 29 29 29 29 29 26 26 26 26 26 27 27 27 27 27 26 26 26 26 26 29 29 29 29 29 28 28 28 28 28 </p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="fg_treeA_0__mPltTreeOakTrunk-mesh" name="fg_treeA_0__mPltTreeOakTrunk">
+      <mesh>
+        <source id="fg_treeA_0__mPltTreeOakTrunk-position">
+          <float_array id="fg_treeA_0__mPltTreeOakTrunk-position-array" count="249">0.6937652 3.40045 -0.5807228 0.5668697 3.252457 -0.5813819 0.5196174 3.303777 -0.6416299 0.2252369 3.043108 -0.6331177 0.39057 2.91274 -0.4971058 0 2.704858 -0.6452413 0.3465129 2.596549 -0.4830142 0 2.16356 -0.6620674 0.3024559 2.142032 -0.473291 8.162856E-05 1.394334 -0.7633131 0.3649225 1.362888 -0.5253898 0.4558468 0.7195194 -0.7097677 -0.008137971 0.7371039 -0.9982039 -0.008698702 -0.2046978 -1.342419 0.5551634 -0.3791367 -1.126036 -0.48672 3.329325 -0.6416299 -0.5668699 3.252457 -0.5813817 -0.6937652 3.40045 -0.5807227 -0.2252372 3.043108 -0.6331177 -0.39057 2.91274 -0.4971058 0 2.704858 -0.6452413 -0.3465129 2.596549 -0.4830141 0 2.16356 -0.6620674 -0.3024559 2.142032 -0.473291 8.162856E-05 1.394334 -0.7633131 -0.3649225 1.362888 -0.5253898 -0.4547043 0.7195194 -0.7097677 -0.008137971 0.7371039 -0.9982039 -0.008698702 -0.2046978 -1.342419 -0.5373974 -0.3791366 -1.126036 -0.5373974 -0.3791366 -1.126036 -0.7008286 -0.462361 -0.3778004 -0.4547043 0.7195194 -0.7097677 -0.2702198 0.700296 -0.1839505 -0.5095549 -0.4054843 0.2064605 -0.3649225 1.362888 -0.5253898 0.0042696 -0.4623969 0.5507064 -0.1824613 1.352214 -0.1765298 -0.3024559 2.142032 -0.473291 0.0110635 0.700296 0.1014125 0.2702198 0.700296 -0.1839505 0.518095 -0.4054843 0.2064605 0.7656946 -0.462361 -0.3778003 0.5551634 -0.3791367 -1.126036 0.4558468 0.7195194 -0.7097677 0.3649225 1.362888 -0.5253898 0.1824613 1.352214 -0.1765298 0.3024559 2.142032 -0.473291 0 1.392171 -0.009447187 0.2171203 2.141414 -0.2045068 0.3465129 2.596549 -0.4830142 0 2.115525 -0.09154169 0.274626 2.660732 -0.2556823 0.39057 2.91274 -0.4971058 -0.2171203 2.141414 -0.2045068 -0.3465129 2.596549 -0.4830141 0 2.702262 -0.1538679 -0.2746257 2.660732 -0.251929 -0.39057 2.91274 -0.4971058 -0.3321311 2.947866 -0.2993513 -0.5607345 3.265258 -0.44611 -0.5668699 3.252457 -0.5813817 -0.6937652 3.40045 -0.5807227 -0.241411 3.043108 -0.2983539 -0.5348451 3.336583 -0.4170814 -0.4940817 3.382715 -0.5018683 -0.48672 3.329325 -0.6416299 -0.1801164 3.105119 -0.4394309 -0.2252372 3.043108 -0.6331177 -0.07204654 2.921933 -0.4191445 0 2.704858 -0.6452413 0 2.884036 -0.398858 0.07204676 2.921933 -0.4191445 0.2252369 3.043108 -0.6331177 0.1801168 3.105119 -0.439431 0.5196174 3.303777 -0.6416299 0.2414119 3.043108 -0.2983539 0.494082 3.382715 -0.5018684 0.6937652 3.40045 -0.5807228 0.534846 3.336583 -0.4170814 0.560736 3.265259 -0.4457661 0.5668697 3.252457 -0.5813819 0.3321318 2.947866 -0.306858</float_array>
+          <technique_common>
+            <accessor source="#fg_treeA_0__mPltTreeOakTrunk-position-array" count="83" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="fg_treeA_0__mPltTreeOakTrunk-normal">
+          <float_array id="fg_treeA_0__mPltTreeOakTrunk-normal-array" count="249">0.5440313 0.2915851 0.7866927 0.7338552 -0.5733855 -0.3639922 0.444227 -0.4285714 -0.7866927 0.4129159 -0.3072407 -0.8571429 0.8473581 -0.3835616 -0.369863 0.4540117 -0.09784736 -0.8864971 0.9178082 -0.1311155 -0.37182 0 0.05283757 -0.9980431 0.9041096 0.03131115 0.4246575 -0.001956947 0.2367906 -0.9706458 0.9706458 0.08806262 0.221135 0.9549902 0.2759295 -0.1017613 -0.007827789 0.3581213 -0.9334638 -0.01174168 0.369863 -0.9295499 0.851272 0.09589041 -0.516634 -0.3639922 -0.3444227 -0.8649706 -0.7181996 -0.5479452 -0.4305284 -0.5440313 0.2915851 0.7866927 -0.3992172 -0.2818004 -0.8727984 -0.8454012 -0.369863 -0.3874756 -0.4540117 -0.09784736 -0.8864971 -0.9178082 -0.1311155 -0.3757339 0 0.05283757 -0.9980431 -0.9041096 0.03131115 0.4246575 -0.001956947 0.2367906 -0.9706458 -0.9706458 0.08806262 0.221135 -0.962818 0.258317 -0.06457926 -0.007827789 0.3581213 -0.9334638 -0.01174168 0.369863 -0.9295499 -0.890411 0.1076321 -0.4403131 -0.890411 0.1076321 -0.4403131 -0.9178082 0.3992172 -0.003913894 -0.962818 0.258317 -0.06457926 -0.6966732 0.4148728 0.5870842 -0.6007828 0.5205479 0.6086106 -0.9706458 0.08806262 0.221135 0 0.592955 0.8043053 -0.7866927 0.06849315 0.6125244 -0.9041096 0.03131115 0.4246575 0.01761252 0.2524462 0.9667319 0.6849315 0.4246575 0.5909981 0.5733855 0.5283757 0.62818 0.9021527 0.4305284 -0.02152642 0.851272 0.09589041 -0.516634 0.9549902 0.2759295 -0.1017613 0.9706458 0.08806262 0.221135 0.7906067 0.0704501 0.6066536 0.9041096 0.03131115 0.4246575 0.005870841 0.09589041 0.9960861 0.7592955 0.01369863 0.6516634 0.9178082 -0.1311155 -0.37182 0 0.03131115 1 0.7260274 0 0.6868885 0.8473581 -0.3835616 -0.369863 -0.7573385 0.01174168 0.6516634 -0.9178082 -0.1311155 -0.3757339 0 0.6751468 0.7377691 -0.7221135 0.001956947 0.6908023 -0.8454012 -0.369863 -0.3874756 -0.7123288 -0.0998043 0.6947162 -0.7749511 -0.295499 0.55773 -0.7181996 -0.5479452 -0.4305284 -0.5440313 0.2915851 0.7866927 0.3013699 0.5029354 0.8101761 -0.221135 0.5205479 0.8238748 0.3757339 0.9217221 0.0998043 0.4677104 0.8180039 -0.334638 0.7592955 0.6399217 0.1174168 0.7749511 0.553816 -0.3052838 0.7260274 0.6849315 0.06262231 0 1 0.02544031 0 0.9980431 0.04892368 -0.7260274 0.6849315 0.06262231 -0.7592955 0.555773 -0.3405088 -0.7553816 0.6477495 0.09001957 -0.4618395 0.7514677 -0.4716243 -0.2935421 0.4990215 0.816047 -0.3894325 0.9217221 0.01956947 0.5440313 0.2915851 0.7866927 0.2270059 0.5146771 0.8258317 0.7749511 -0.3013699 0.555773 0.7338552 -0.5733855 -0.3639922 0.7162427 -0.1076321 0.6888454</float_array>
+          <technique_common>
+            <accessor source="#fg_treeA_0__mPltTreeOakTrunk-normal-array" count="83" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="fg_treeA_0__mPltTreeOakTrunk-color">
+          <float_array id="fg_treeA_0__mPltTreeOakTrunk-color-array" count="332">0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507 19.79688 19.79688 19.79688 0.0009994507</float_array>
+          <technique_common>
+            <accessor source="#fg_treeA_0__mPltTreeOakTrunk-color-array" count="83" stride="4">
+              <param name="R" type="float" />
+              <param name="G" type="float" />
+              <param name="B" type="float" />
+              <param name="A" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="fg_treeA_0__mPltTreeOakTrunk-texcoord">
+          <float_array id="fg_treeA_0__mPltTreeOakTrunk-texcoord-array" count="166">0.6783398 0.9569696 0.669337 0.9392691 0.6831769 0.942916 0.6849775 0.923003 0.660029 0.9233234 0.6736705 0.8847333 0.6451667 0.8847333 0.6761273 0.8608682 0.6481422 0.8608682 0.683299 0.8220035 0.6492866 0.8220035 0.6547647 0.7745632 0.6915999 0.7745632 0.7203631 0.7003434 0.6970474 0.7003434 0.4945296 0.9433585 0.5074998 0.9392691 0.5037766 0.9552148 0.4964523 0.923003 0.5169451 0.9233234 0.4990768 0.8847333 0.5270008 0.8847333 0.4968643 0.8608682 0.5276112 0.8608682 0.4922408 0.8220035 0.5266652 0.8220035 0.5232319 0.7745632 0.4850996 0.7745632 0.4666056 0.7003434 0.4915694 0.7003434 0.4915694 0.7003434 0.5145342 0.7003434 0.5232319 0.7745632 0.5498894 0.7745632 0.5388876 0.7003434 0.5266652 0.8220035 0.589807 0.7003434 0.5573205 0.8220035 0.5276112 0.8608682 0.588922 0.7745632 0.6279545 0.7745632 0.6407263 0.7003434 0.66627 0.7003434 0.6970474 0.7003434 0.6547647 0.7745632 0.6492866 0.8220035 0.6186312 0.8220035 0.6481422 0.8608682 0.5879759 0.8220035 0.6180056 0.8608682 0.6451667 0.8847333 0.5878843 0.8608682 0.6247501 0.8847333 0.660029 0.9233234 0.5577478 0.8608682 0.5270008 0.8847333 0.5900511 0.8878462 0.550927 0.8847333 0.5169451 0.9233234 0.5319448 0.9233234 0.5181049 0.9392691 0.5074998 0.9392691 0.5037766 0.9552148 0.5606775 0.9233234 0.5355001 0.9448234 0.5358663 0.9519799 0.5362325 0.9519799 0.5616083 0.9233234 0.565774 0.9385214 0.5748989 0.9180133 0.5882048 0.9285268 0.5882048 0.9127032 0.6014954 0.9180133 0.6171206 0.9385214 0.6148012 0.9233234 0.6414893 0.9519799 0.6157168 0.9233234 0.6418555 0.9519799 0.6783398 0.9569696 0.6422217 0.9448234 0.6590372 0.9392691 0.669337 0.9392691 0.6453193 0.9233234</float_array>
+          <technique_common>
+            <accessor source="#fg_treeA_0__mPltTreeOakTrunk-texcoord-array" count="83" stride="2">
+              <param name="S" type="float" />
+              <param name="T" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="fg_treeA_0__mPltTreeOakTrunk-vertex">
+          <input semantic="POSITION" source="#fg_treeA_0__mPltTreeOakTrunk-position" />
+        </vertices>
+        <triangles material="mPltTreeOakTrunk" count="104">
+          <input semantic="VERTEX" source="#fg_treeA_0__mPltTreeOakTrunk-vertex" offset="0" />
+          <input semantic="NORMAL" source="#fg_treeA_0__mPltTreeOakTrunk-normal" offset="1" />
+          <input semantic="COLOR" source="#fg_treeA_0__mPltTreeOakTrunk-color" offset="2" set="0" />
+          <input semantic="TEXCOORD" source="#fg_treeA_0__mPltTreeOakTrunk-texcoord" offset="3" set="0" />
+          <p>0 0 0 0 1 1 1 1 2 2 2 2 2 2 2 2 1 1 1 1 3 3 3 3 1 1 1 1 4 4 4 4 3 3 3 3 3 3 3 3 4 4 4 4 5 5 5 5 4 4 4 4 6 6 6 6 5 5 5 5 5 5 5 5 6 6 6 6 7 7 7 7 6 6 6 6 8 8 8 8 7 7 7 7 9 9 9 9 7 7 7 7 8 8 8 8 10 10 10 10 9 9 9 9 8 8 8 8 10 10 10 10 11 11 11 11 9 9 9 9 11 11 11 11 12 12 12 12 9 9 9 9 13 13 13 13 12 12 12 12 11 11 11 11 14 14 14 14 13 13 13 13 11 11 11 11 15 15 15 15 16 16 16 16 17 17 17 17 16 16 16 16 15 15 15 15 18 18 18 18 19 19 19 19 16 16 16 16 18 18 18 18 19 19 19 19 18 18 18 18 20 20 20 20 21 21 21 21 19 19 19 19 20 20 20 20 21 21 21 21 20 20 20 20 22 22 22 22 23 23 23 23 21 21 21 21 22 22 22 22 23 23 23 23 22 22 22 22 24 24 24 24 25 25 25 25 23 23 23 23 24 24 24 24 25 25 25 25 24 24 24 24 26 26 26 26 24 24 24 24 27 27 27 27 26 26 26 26 26 26 26 26 27 27 27 27 28 28 28 28 29 29 29 29 26 26 26 26 28 28 28 28 30 30 30 30 31 31 31 31 32 32 32 32 33 33 33 33 32 32 32 32 31 31 31 31 33 33 33 33 31 31 31 31 34 34 34 34 33 33 33 33 35 35 35 35 32 32 32 32 33 33 33 33 34 34 34 34 36 36 36 36 33 33 33 33 37 37 37 37 35 35 35 35 35 35 35 35 37 37 37 37 38 38 38 38 36 36 36 36 39 39 39 39 33 33 33 33 33 33 33 33 39 39 39 39 37 37 37 37 36 36 36 36 40 40 40 40 39 39 39 39 40 40 40 40 36 36 36 36 41 41 41 41 40 40 40 40 41 41 41 41 42 42 42 42 43 43 43 43 44 44 44 44 42 42 42 42 44 44 44 44 40 40 40 40 42 42 42 42 45 45 45 45 40 40 40 40 44 44 44 44 45 45 45 45 46 46 46 46 40 40 40 40 40 40 40 40 46 46 46 46 39 39 39 39 46 46 46 46 45 45 45 45 47 47 47 47 46 46 46 46 48 48 48 48 39 39 39 39 39 39 39 39 48 48 48 48 37 37 37 37 49 49 49 49 46 46 46 46 47 47 47 47 49 49 49 49 47 47 47 47 50 50 50 50 48 48 48 48 46 46 46 46 51 51 51 51 46 46 46 46 49 49 49 49 51 51 51 51 37 37 37 37 48 48 48 48 51 51 51 51 52 52 52 52 49 49 49 49 50 50 50 50 52 52 52 52 50 50 50 50 53 53 53 53 54 54 54 54 37 37 37 37 51 51 51 51 37 37 37 37 54 54 54 54 38 38 38 38 55 55 55 55 38 38 38 38 54 54 54 54 51 51 51 51 49 49 49 49 56 56 56 56 54 54 54 54 51 51 51 51 56 56 56 56 49 49 49 49 52 52 52 52 56 56 56 56 57 57 57 57 55 55 55 55 54 54 54 54 57 57 57 57 54 54 54 54 56 56 56 56 58 58 58 58 55 55 55 55 57 57 57 57 59 59 59 59 58 58 58 58 57 57 57 57 57 57 57 57 56 56 56 56 59 59 59 59 58 58 58 58 59 59 59 59 60 60 60 60 61 61 61 61 58 58 58 58 60 60 60 60 62 62 62 62 61 61 61 61 60 60 60 60 59 59 59 59 63 63 63 63 60 60 60 60 56 56 56 56 63 63 63 63 59 59 59 59 60 60 60 60 64 64 64 64 62 62 62 62 63 63 63 63 64 64 64 64 60 60 60 60 64 64 64 64 65 65 65 65 62 62 62 62 62 62 62 62 65 65 65 65 66 66 66 66 67 67 67 67 65 65 65 65 64 64 64 64 65 65 65 65 67 67 67 67 66 66 66 66 63 63 63 63 67 67 67 67 64 64 64 64 67 67 67 67 68 68 68 68 66 66 66 66 63 63 63 63 69 69 69 69 67 67 67 67 68 68 68 68 67 67 67 67 69 69 69 69 56 56 56 56 69 69 69 69 63 63 63 63 68 68 68 68 69 69 69 69 70 70 70 70 70 70 70 70 69 69 69 69 71 71 71 71 71 71 71 71 69 69 69 69 56 56 56 56 72 72 72 72 70 70 70 70 71 71 71 71 56 56 56 56 72 72 72 72 71 71 71 71 73 73 73 73 70 70 70 70 72 72 72 72 73 73 73 73 72 72 72 72 74 74 74 74 73 73 73 73 74 74 74 74 75 75 75 75 76 76 76 76 72 72 72 72 56 56 56 56 74 74 74 74 72 72 72 72 76 76 76 76 74 74 74 74 77 77 77 77 75 75 75 75 75 75 75 75 77 77 77 77 78 78 78 78 77 77 77 77 74 74 74 74 79 79 79 79 78 78 78 78 77 77 77 77 79 79 79 79 74 74 74 74 76 76 76 76 79 79 79 79 79 79 79 79 80 80 80 80 78 78 78 78 80 80 80 80 79 79 79 79 76 76 76 76 80 80 80 80 81 81 81 81 78 78 78 78 53 53 53 53 81 81 81 81 80 80 80 80 82 82 82 82 80 80 80 80 76 76 76 76 82 82 82 82 53 53 53 53 80 80 80 80 82 82 82 82 76 76 76 76 56 56 56 56 82 82 82 82 52 52 52 52 53 53 53 53 52 52 52 52 82 82 82 82 56 56 56 56 </p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_controllers>
+    <controller id="Armature_L01_Rich1__mTreeOakLeaf-mesh">
+      <skin source="#L01_Rich1__mTreeOakLeaf-mesh">
+        <bind_shape_matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</bind_shape_matrix>
+        <source id="L01_Rich1__mTreeOakLeaf-mesh-joint">
+          <Name_array id="L01_Rich1__mTreeOakLeaf-mesh-joint-array" count="1">Root</Name_array>
+          <technique_common>
+            <accessor source="#L01_Rich1__mTreeOakLeaf-mesh-joint-array" count="1" stride="1">
+              <param name="JOINT" type="name" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="L01_Rich1__mTreeOakLeaf-mesh-inv_bind_matrix">
+          <float_array id="L01_Rich1__mTreeOakLeaf-mesh-inv_bind_matrix-array" count="16">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#L01_Rich1__mTreeOakLeaf-mesh-inv_bind_matrix-array" count="1" stride="16">
+              <param name="TRANSFORM" type="float4x4" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="L01_Rich1__mTreeOakLeaf-mesh-weight">
+          <float_array id="L01_Rich1__mTreeOakLeaf-mesh-weight-array" count="1">1</float_array>
+          <technique_common>
+            <accessor source="#L01_Rich1__mTreeOakLeaf-mesh-weight-array" count="1" stride="1">
+              <param name="WEIGHT" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <joints>
+          <input semantic="JOINT" source="#L01_Rich1__mTreeOakLeaf-mesh-joint" />
+          <input semantic="INV_BIND_MATRIX" source="#L01_Rich1__mTreeOakLeaf-mesh-inv_bind_matrix" />
+        </joints>
+        <vertex_weights count="30">
+          <input semantic="JOINT" source="#L01_Rich1__mTreeOakLeaf-mesh-joint" offset="0" />
+          <input semantic="WEIGHT" source="#L01_Rich1__mTreeOakLeaf-mesh-weight" offset="1" />
+          <vcount>1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 </vcount>
+          <v>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </v>
+        </vertex_weights>
+      </skin>
+    </controller>
+    <controller id="Armature_fg_treeA_0__mPltTreeOakTrunk-mesh">
+      <skin source="#fg_treeA_0__mPltTreeOakTrunk-mesh">
+        <bind_shape_matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</bind_shape_matrix>
+        <source id="fg_treeA_0__mPltTreeOakTrunk-mesh-joint">
+          <Name_array id="fg_treeA_0__mPltTreeOakTrunk-mesh-joint-array" count="1">Root</Name_array>
+          <technique_common>
+            <accessor source="#fg_treeA_0__mPltTreeOakTrunk-mesh-joint-array" count="1" stride="1">
+              <param name="JOINT" type="name" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="fg_treeA_0__mPltTreeOakTrunk-mesh-inv_bind_matrix">
+          <float_array id="fg_treeA_0__mPltTreeOakTrunk-mesh-inv_bind_matrix-array" count="16">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#fg_treeA_0__mPltTreeOakTrunk-mesh-inv_bind_matrix-array" count="1" stride="16">
+              <param name="TRANSFORM" type="float4x4" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="fg_treeA_0__mPltTreeOakTrunk-mesh-weight">
+          <float_array id="fg_treeA_0__mPltTreeOakTrunk-mesh-weight-array" count="1">1</float_array>
+          <technique_common>
+            <accessor source="#fg_treeA_0__mPltTreeOakTrunk-mesh-weight-array" count="1" stride="1">
+              <param name="WEIGHT" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <joints>
+          <input semantic="JOINT" source="#fg_treeA_0__mPltTreeOakTrunk-mesh-joint" />
+          <input semantic="INV_BIND_MATRIX" source="#fg_treeA_0__mPltTreeOakTrunk-mesh-inv_bind_matrix" />
+        </joints>
+        <vertex_weights count="83">
+          <input semantic="JOINT" source="#fg_treeA_0__mPltTreeOakTrunk-mesh-joint" offset="0" />
+          <input semantic="WEIGHT" source="#fg_treeA_0__mPltTreeOakTrunk-mesh-weight" offset="1" />
+          <vcount>1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 </vcount>
+          <v>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 </v>
+        </vertex_weights>
+      </skin>
+    </controller>
+  </library_controllers>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Armature" name="Armature" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <node id="Armature_Root" name="Root" sid="Root" type="JOINT">
+          <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        </node>
+      </node>
+      <node id="L01_Rich1__mTreeOakLeaf" name="L01_Rich1__mTreeOakLeaf" type="NODE">
+        <instance_controller url="#Armature_L01_Rich1__mTreeOakLeaf-mesh">
+          <skeleton>#Armature_Root</skeleton>
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="mTreeOakLeaf" target="#mTreeOakLeaf" />
+              <bind_vertex_input semantic="CHANNEL0" input_semantic="TEXCOORD" input_set="0" />
+              <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="1" />
+              <bind_vertex_input semantic="CHANNEL2" input_semantic="TEXCOORD" input_set="2" />
+            </technique_common>
+          </bind_material>
+        </instance_controller>
+      </node>
+      <node id="fg_treeA_0__mPltTreeOakTrunk" name="fg_treeA_0__mPltTreeOakTrunk" type="NODE">
+        <instance_controller url="#Armature_fg_treeA_0__mPltTreeOakTrunk-mesh">
+          <skeleton>#Armature_Root</skeleton>
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="mPltTreeOakTrunk" target="#mPltTreeOakTrunk" />
+              <bind_vertex_input semantic="CHANNEL0" input_semantic="TEXCOORD" input_set="0" />
+              <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="1" />
+              <bind_vertex_input semantic="CHANNEL2" input_semantic="TEXCOORD" input_set="2" />
+            </technique_common>
+          </bind_material>
+        </instance_controller>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene" />
+  </scene>
+</COLLADA>
